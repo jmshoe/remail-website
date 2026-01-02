@@ -1,0 +1,313 @@
+// Prisma schema for REmail - Direct Mail Automation Platform
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ==================== USER & AUTH ====================
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  emailVerified DateTime?
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Subscription
+  stripeCustomerId       String?   @unique
+  stripeSubscriptionId   String?   @unique
+  stripePriceId          String?
+  stripeCurrentPeriodEnd DateTime?
+
+  // Relations
+  accounts   Account[]
+  sessions   Session[]
+  campaigns  Campaign[]
+  mailLists  MailList[]
+  templates  Template[]
+
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+// ==================== DIRECT MAIL ====================
+
+model Campaign {
+  id          String         @id @default(cuid())
+  userId      String
+  name        String
+  description String?
+  status      CampaignStatus @default(DRAFT)
+
+  // Mail settings
+  templateId String?
+  mailListId String?
+
+  // Tracking
+  totalPieces    Int      @default(0)
+  sentCount      Int      @default(0)
+  deliveredCount Int      @default(0)
+  returnedCount  Int      @default(0)
+  responseCount  Int      @default(0)
+
+  // Scheduling
+  scheduledAt DateTime?
+  sentAt      DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  template  Template?  @relation(fields: [templateId], references: [id])
+  mailList  MailList?  @relation(fields: [mailListId], references: [id])
+  mailPieces MailPiece[]
+
+  @@index([userId])
+  @@index([status])
+  @@map("campaigns")
+}
+
+enum CampaignStatus {
+  DRAFT
+  SCHEDULED
+  PROCESSING
+  SENT
+  COMPLETED
+  CANCELLED
+}
+
+model MailList {
+  id          String   @id @default(cuid())
+  userId      String
+  name        String
+  description String?
+
+  // List metadata
+  recordCount Int      @default(0)
+  source      String?  // "upload", "skip_trace", "api"
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  recipients Recipient[]
+  campaigns  Campaign[]
+
+  @@index([userId])
+  @@map("mail_lists")
+}
+
+model Recipient {
+  id         String  @id @default(cuid())
+  mailListId String
+
+  // Contact info
+  firstName String?
+  lastName  String?
+  company   String?
+
+  // Address
+  addressLine1 String
+  addressLine2 String?
+  city         String
+  state        String
+  zipCode      String
+
+  // Property info (for real estate)
+  propertyAddress String?
+  propertyCity    String?
+  propertyState   String?
+  propertyZip     String?
+  propertyType    String? // SFR, Multi, Land, etc.
+
+  // Metadata
+  customFields Json?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  mailList   MailList    @relation(fields: [mailListId], references: [id], onDelete: Cascade)
+  mailPieces MailPiece[]
+
+  @@index([mailListId])
+  @@map("recipients")
+}
+
+model Template {
+  id          String       @id @default(cuid())
+  userId      String?      // null for system templates
+  name        String
+  description String?
+  type        TemplateType
+  category    String?      // "wholesaling", "probate", "absentee", etc.
+
+  // Design
+  frontHtml String  @db.Text
+  backHtml  String? @db.Text
+  thumbnail String?
+
+  // Settings
+  isPublic  Boolean @default(false)
+  isPremium Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  user      User?      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  campaigns Campaign[]
+
+  @@index([userId])
+  @@index([type])
+  @@index([isPublic])
+  @@map("templates")
+}
+
+enum TemplateType {
+  POSTCARD_4X6
+  POSTCARD_6X9
+  LETTER
+  YELLOW_LETTER
+  GREETING_CARD
+}
+
+model MailPiece {
+  id          String          @id @default(cuid())
+  campaignId  String
+  recipientId String
+
+  // Lob integration
+  lobId          String?  @unique
+  lobUrl         String?
+  trackingNumber String?
+
+  // Status
+  status        MailPieceStatus @default(PENDING)
+  statusDetails String?
+
+  // Timestamps
+  sentAt      DateTime?
+  deliveredAt DateTime?
+  returnedAt  DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  campaign  Campaign  @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  recipient Recipient @relation(fields: [recipientId], references: [id])
+
+  @@index([campaignId])
+  @@index([status])
+  @@map("mail_pieces")
+}
+
+enum MailPieceStatus {
+  PENDING
+  PROCESSING
+  SENT
+  IN_TRANSIT
+  DELIVERED
+  RETURNED
+  FAILED
+}
+
+// ==================== LEAD CAPTURE ====================
+
+model ContactSubmission {
+  id            String   @id @default(cuid())
+
+  // Contact info
+  name          String
+  email         String
+  phone         String?
+  company       String?
+  investorType  String?  // "wholesaler", "flipper", "buy-and-hold", "agent", "other"
+  monthlyVolume String?  // "under-500", "500-2000", "2000-5000", "over-5000"
+  message       String   @db.Text
+
+  // Attribution
+  source        String?  // Page or form source
+  utmSource     String?
+  utmMedium     String?
+  utmCampaign   String?
+  utmContent    String?
+  utmTerm       String?
+  gclid         String?  // Google Ads click ID
+  referrer      String?
+  landingPage   String?
+
+  // Metadata
+  ip            String?
+  userAgent     String?
+
+  // Processing status
+  status        LeadStatus @default(NEW)
+  notes         String?    @db.Text
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+  @@map("contact_submissions")
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  CONVERTED
+  CLOSED
+  SPAM
+}
