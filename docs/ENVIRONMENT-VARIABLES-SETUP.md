@@ -36,7 +36,7 @@ Since you're not currently using the database (form submissions go to n8n webhoo
 ### NEXT_PUBLIC_APP_URL
 - **Used in**: Sitemap, robots.txt, metadata, absolute URL helper
 - **Default**: `https://remaildirect.com`
-- **Recommended**: Your production domain (e.g., `https://remail.com`)
+- **Recommended**: Your production domain (e.g., `https://remaildirect.com`)
 - **When**: Set before first deployment
 
 ### NEXT_PUBLIC_SITE_URL
@@ -54,7 +54,7 @@ Since you're not currently using the database (form submissions go to n8n webhoo
 
 ### CONTACT_NOTIFICATION_EMAIL
 - **Used in**: Contact notification emails
-- **Default**: `sales@remail.com`
+- **Default**: `sales@remaildirect.com`
 - **Recommended**: Your actual support/sales email
 
 ### NEXT_PUBLIC_VAPI_PUBLIC_KEY

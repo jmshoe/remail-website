@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getAllBlogSlugs } from '@/lib/mdx'
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://remaildirect.com'
+const baseUrl = (process.env.NEXT_PUBLIC_APP_URL || 'https://remaildirect.com').replace(/\/+$/, '')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Static marketing pages

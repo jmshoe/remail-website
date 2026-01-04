@@ -13,6 +13,10 @@ const footerNavigation = {
     { name: 'For Flippers', href: '/flippers' },
     { name: 'For Agents', href: '/agents' },
   ],
+  tools: [
+    { name: 'ROAS Calculator', href: '/direct-mail-roas-calculator' },
+    { name: 'Sample Size Calculator', href: '/direct-mail-sample-size-calculator' },
+  ],
   company: [
     { name: 'About', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
@@ -115,7 +119,20 @@ export function Footer() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white">Free Tools</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {footerNavigation.tools.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        href={item.href}
+                        className="text-sm leading-6 hover:text-white transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <h3 className="text-sm font-semibold leading-6 text-white mt-8">Company</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {footerNavigation.company.map((item) => (
                     <li key={item.name}>

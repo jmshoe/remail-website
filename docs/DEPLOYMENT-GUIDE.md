@@ -67,8 +67,8 @@ After connecting your GitHub repo to Vercel (see main deployment guide):
    - `N8N_WEBHOOK_URL` = Your n8n webhook URL
 
    **Recommended:**
-   - `NEXT_PUBLIC_APP_URL` = `https://remail.com` (or your Vercel preview URL)
-   - `NEXT_PUBLIC_SITE_URL` = `https://remail.com` (same as above)
+   - `NEXT_PUBLIC_APP_URL` = `https://remaildirect.com` (or your Vercel preview URL)
+   - `NEXT_PUBLIC_SITE_URL` = `https://remaildirect.com` (same as above)
 
 3. Select environments: **Production**, **Preview**, and **Development** (or just Production for now)
 4. Click **Save** after each variable

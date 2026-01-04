@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
-import { Menu, X, Mail } from 'lucide-react'
+import { useState, useRef, useEffect } from 'react'
+import { Menu, X, Mail, ChevronDown, Calculator, TestTube } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
@@ -14,8 +14,36 @@ const navigation = [
   { name: 'Resources', href: '/blog' },
 ]
 
+const toolsNavigation = [
+  {
+    name: 'ROAS Calculator',
+    href: '/direct-mail-roas-calculator',
+    description: 'Calculate your direct mail ROI',
+    icon: Calculator,
+  },
+  {
+    name: 'Sample Size Calculator',
+    href: '/direct-mail-sample-size-calculator',
+    description: 'Plan your A/B test sample sizes',
+    icon: TestTube,
+  },
+]
+
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [toolsOpen, setToolsOpen] = useState(false)
+  const toolsRef = useRef<HTMLDivElement>(null)
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (toolsRef.current && !toolsRef.current.contains(event.target as Node)) {
+        setToolsOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
@@ -29,7 +57,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex lg:gap-x-8">
+        <div className="hidden lg:flex lg:items-center lg:gap-x-8">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -39,6 +67,40 @@ export function Header() {
               {item.name}
             </Link>
           ))}
+
+          {/* Tools Dropdown */}
+          <div className="relative" ref={toolsRef}>
+            <button
+              type="button"
+              className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              onClick={() => setToolsOpen(!toolsOpen)}
+              aria-expanded={toolsOpen}
+            >
+              Tools
+              <ChevronDown className={cn('h-4 w-4 transition-transform', toolsOpen && 'rotate-180')} />
+            </button>
+
+            {toolsOpen && (
+              <div className="absolute left-1/2 z-10 mt-3 w-72 -translate-x-1/2 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5">
+                {toolsNavigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setToolsOpen(false)}
+                    className="group flex items-start gap-3 rounded-lg p-3 hover:bg-gray-50 transition-colors"
+                  >
+                    <div className="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                      <item.icon className="h-5 w-5 text-primary" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <div className="font-medium text-foreground">{item.name}</div>
+                      <p className="text-sm text-muted-foreground">{item.description}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Desktop CTA */}
@@ -109,6 +171,26 @@ export function Header() {
                     {item.name}
                   </Link>
                 ))}
+
+                {/* Tools Section */}
+                <div className="pt-4">
+                  <p className="px-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                    Free Tools
+                  </p>
+                  <div className="mt-2 space-y-1">
+                    {toolsNavigation.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="-mx-3 flex items-center gap-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      >
+                        <item.icon className="h-5 w-5 text-primary" />
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               </div>
               <div className="py-6 space-y-4">
                 <Link
