@@ -369,9 +369,91 @@ import Image from 'next/image'
 
 ---
 
+## Blog Post Hero Images
+
+Each blog post should include a hero image that appears at the top of the post and is used for social sharing (OpenGraph/Twitter cards).
+
+### Requirements
+
+| Property | Value |
+|----------|-------|
+| Dimensions | 1920x1080px (16:9 aspect ratio) |
+| Max file size | 200KB (optimize before uploading) |
+| Format | JPG or WebP |
+| Location | `/public/images/blog/` |
+| Naming | `{target-keyword-slug}-hero.jpg` |
+
+### SEO Guidelines for Blog Images
+
+**File Names:**
+- Use lowercase, hyphenated format
+- Include the primary target keyword
+- End with `-hero.jpg` for consistency
+
+**Examples:**
+- `skip-tracing-real-estate-hero.jpg`
+- `tax-delinquent-property-list-hero.jpg`
+- `direct-mail-wholesaling-hero.jpg`
+- `driving-for-dollars-guide-hero.jpg`
+
+**Alt Text:**
+- Descriptive, keyword-aligned
+- Under 125 characters
+- Make it useful for accessibility
+- Example: `"Skip tracing tools for real estate investors showing property owner contact information"`
+
+### Image Generation Workflow
+
+The `/new-blog-post` command includes a hero image step (Step 6) that:
+
+1. **Generates an image prompt** based on the post's topic and keywords
+2. **Suggests an SEO-optimized file name** using target keywords
+3. **Creates alt text** that's descriptive and keyword-aligned
+4. **Provides generation options** (NanoBanana, stock photos, or manual)
+
+### NanoBanana MCP (Gemini Image Generation)
+
+**NanoBanana** is Google Gemini's image generation model, available via MCP server.
+
+**Installation:**
+```bash
+claude mcp add gemini-nanobanana-mcp -s user -e GEMINI_API_KEY="YOUR_API_KEY" -- npx -y gemini-nanobanana-mcp@latest
+```
+
+**Get API Key:** https://aistudio.google.com/apikey
+
+**Documentation:** See `.claude/mcp/nanobanana-mcp-setup.md`
+
+### Blog Image Prompt Template
+
+```
+[Visual concept related to blog topic], modern SaaS aesthetic, minimalist design,
+blue (#2563EB) and green (#10B981) color accents, clean background,
+soft natural lighting, professional photography style, 16:9 aspect ratio,
+no text overlays, high quality
+```
+
+**Example for "skip tracing real estate":**
+```
+Digital dashboard showing property owner contact information,
+modern UI design with blue and green highlights, clean interface,
+soft lighting, professional SaaS aesthetic, 16:9 aspect ratio
+```
+
+### Blog Image Checklist
+
+- [ ] Image matches the blog post topic
+- [ ] File name includes target keyword
+- [ ] Alt text is descriptive (<125 chars)
+- [ ] File optimized to <200KB
+- [ ] Saved to `/public/images/blog/`
+- [ ] Frontmatter updated with `image` and `imageAlt`
+
+---
+
 ## Notes
 
-- "Nano Banana" - If you're referring to a specific AI tool, please let me know and I can add specific guidance for it
+- **NanoBanana** - Google Gemini's image generation model, available via MCP. See `.claude/mcp/nanobanana-mcp-setup.md` for setup.
 - Consider creating a style guide document with approved images for consistency
 - Test images on different devices and screen sizes
 - Ensure images are accessible (proper alt text, good contrast)

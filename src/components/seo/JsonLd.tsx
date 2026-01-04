@@ -19,8 +19,8 @@ export function organizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'REmail',
-    url: 'https://remail.com',
-    logo: 'https://remail.com/logo.png',
+    url: 'https://remaildirect.com',
+    logo: 'https://remaildirect.com/logo.png',
     description:
       'Direct mail automation platform for real estate investors. Automate postcards, letters, and campaigns to find motivated sellers.',
     sameAs: [
@@ -30,7 +30,7 @@ export function organizationSchema() {
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+1-555-REmail',
+      telephone: '+1-980-277-7437',
       contactType: 'sales',
       availableLanguage: 'English',
     },
@@ -42,12 +42,12 @@ export function websiteSchema() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'REmail',
-    url: 'https://remail.com',
+    url: 'https://remaildirect.com',
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://remail.com/search?q={search_term_string}',
+        urlTemplate: 'https://remaildirect.com/search?q={search_term_string}',
       },
       'query-input': 'required name=search_term_string',
     },

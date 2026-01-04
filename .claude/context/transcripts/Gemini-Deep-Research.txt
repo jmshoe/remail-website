@@ -1,0 +1,87 @@
+Gemini Deep Research
+===
+
+RØDE NT-USB+ & Canon Digital Camera: [00:00:00] You know how in the movies, the CEO goes to his team and says, Hey, I need a full report on the competition by the end of the day today. Imagine if you had your own team of researchers in your back pocket to basically. Deep dive into any topic you're interested in. Or surface up the things that you would need to make a decision on, whether it's buying a business, whether it's selecting a vendor, whatever the use case could be. AI models. 
+
+These days are getting to the place where they could replace an entire team. I've talked a little bit about Gemini recently and a lot of things they've been coming out with, and I want to run through a use case of leveraging 
+
+one of Gemini is more recent models, which is what they call deep research, leveraging their 1.5 model. And how you can actually use this as your own personal research assistant on any type of topic you could imagine.
+
+It seems like everybody, these days on YouTube and the internet are talking about buying businesses. 
+
+And so I thought it'd be cool to try that out and see if I could deeply explore what it would look like to buy a business. I know nothing about. [00:01:00] One of the business types I've heard a lot about is CPA firms. And so we're going to leverage this model to actually do the research for us and we're gonna see if it can give us the information that we need to be able to make a decision on making such a significant purchase with very little information. 
+
+So let's go ahead and jump into it. And. I'm going to do this real time for the first time and we're to see how it goes. 
+
+So I'm going to pull up Gemini advanced here, and you, if you go to the strap down and you'll see a number of the models that they have so their latest models to, oh, they have their flash model, which is a, apparently their fast one. 
+
+And then they have the advanced model. We're going to take a look at 1.5 pro with deep research from Gemini advanced. I do have the subscription. So I think it's a, I don't know, 20 bucks a month. And you get access to the full suite here. And I'm just going to freestyle this.
+
+Okay, so this is what we're going to say. 
+
+We're going to say I'm interested in buying a CPA firm for the cashflow in the south Eastern part of the U S give me a comprehensive overview of the market key considerations and how I should price and [00:02:00] value the company. Also walk me through the considerations during the transition of the company and how best to protect the downside. 
+
+So that's gonna be our prompt and let's see what it gives us. Now, what it should do is it's actually going to put together a sort of research. Plan and present that to us. At that stage, we should be able to edit, refine and see if we agree with the strategy that's going to take to actually execute this. 
+
+Let's see what it says here. 
+
+I'm going to research websites using this prompt, it's going to find some more information on the current market for CA CPA firms. It's going to find considerations in buying. It's going to find the information on how to price and value, find information on the transition process information to protect the downside. 
+
+So it's essentially decomposing exactly what I asked it. And this is the plan it's gonna take and notice it says research websites. So this is actually again, it's Gemini, it's a Google product. And I've talked about this before, how deeply integrated Google already is. And so despite maybe them being a little late to the game the fact [00:03:00] that they're Deeply embedded in everything we do. 
+
+And the fact that they are able to leverage the vast amount of data they have they have a huge leg up on that. And so what it's actually going to do is actually go to websites and poll publicly available information to actually conduct the research on our behalf. Which is massive because you don't actually have to see the data, find the data yourself. 
+
+And this is this fills a huge gap that other models aren't able to do. Once it gets through all that, it's going to analyze the results. It's gonna create a report. 
+
+And I would expect this is going to take something like five to 10 minutes, because it is actually going to pull all of those things. So we'll sit here for a minute. You can see that as a kicking off its job and what we should start to see here, it's actually going to start populating all of the websites that it's actually crawling to actually do this research.
+
+From what I've heard so far, this is a heavy computational cost for them to actually be able to do this. My guess is they're probably losing money on this at the moment, because look at this, they're going through 21 websites, [00:04:00] 50 sites, they're scanning through all of these sites to build out their report and do essentially the homework for you. 
+
+It's even pulling from YouTube. Which is really incredible. The vast amount of Ray that it's able to do, it's actually pulling from SBA and and looking up specifics on accounting firms. So it's an, a pull as many sites as it feels relevant. I think I've seen it go up to a hundred on other examples that I've seen of this. Now, this does take anywhere from five to 10 minutes. I'm gonna go ahead and cut to this. 
+
+As soon as this is downloading.
+
+All right, and we're back. So it has prepared the report for us and is titled buying a CPA firm for cashflow in the south Eastern us. So I'm not going to read through all of this, but let's just scan really quick. You can see. It's pretty comprehensive and it lists all of the sources that it cited. Let's go ahead and just skim through this to see what it is highlighting for us. 
+
+So it actually calls out a couple states where you're seeing some big growth.
+
+You can see, it's actually highlighting some of the top [00:05:00] companies in the area. And you can actually see and it's actually giving you some sources for where to find out some more information about some of the top firms in the area. So it talks a little about the trends, technological advancements talks about staffing challenges. 
+
+So key consideration. Obviously that makes sense has a human capital intensive for the most part, honestly, this, I think could be a good area for potential disruption with AI. I don't wanna get too far ahead of myself, but definitely interesting concepts on, bridging the gap between technology and the staffing challenges that the industry faces. Talks a little bit about shifting client needs. 
+
+Obviously changing tax codes is always something to consider. So that makes a lot of sense. Talk a little bit about pros and cons. So client base. Immediate revenue streams. Recurring, obviously startup costs. Growth potential. Compliance issues.
+
+Experienced staff is key. So it looks like a main consideration. 
+
+Here is you're buying a team. Long [00:06:00] hours, right? A lot of these files, especially during peak season, it's probably very seasonal. So maybe that is not ideal. Competition makes sense. Management integration, client retention, risks, staffing challenges. So all, some really good things to consider throughout this. That it starts to get into key considerations. 
+
+So it talks about due diligence, operational due diligence, legal due diligence, client satisfaction, reputation. All really good things to be digging into as you would actually consider making this sort of purchase. Now it gets into pricing and valuation. So this is actually pretty interesting. 
+
+Typically ranges from. Half to 1.5 times revenue. And can be higher depending on factors such as profitability, growth, client retention. So that's interesting. And that is. I'm assuming that's gross revenue. Oh, yeah. Multiple of gross revenue, multiple net cashflow. Okay. So let's see what it says about here. Couple of different Variations and tactics there. Asset-based probably [00:07:00] not too many assets cost approach. Yeah, not suitable for valuing, which also would make sense. Look at growth rates, client-based team quality and technology. All of that makes a lot of sense. And it starts to get into the other question I had on transition process. A lot about relationships, client retention, staff integration. Information handover. Technology integration. 
+
+All of those make a ton of sense. And then it starts getting into downside. So due diligence, legal agreements, risk mitigation strategies. Which also makes a ton of sense. I guess I have the one thing. The main thing you'd be worried about is, your clients walking away and maybe competing with you if the former owners were off the start off their own firm, for example financing options. 
+
+Okay. SBA loans. I think that's probably the likely case seller financing that makes a lot of sense as well. And then it gets into the conclusion. And then actually sites. At the 57 websites that actually researched. The nice thing here is you can actually [00:08:00] open this in a Google doc and you essentially have your full report there. And what we're actually going to try now is actually ask it a little bit more. And let's see if we can't get it to tell us a little bit more about the valuation of the business and how to actually think about that. 
+
+So we're going to say, walk me through in more detail, how to price in evaluates. 
+
+I misspelled that. but it will be fine. The business based on the current gross revenues and seller discretionary earnings which is essentially like your EBITDA. And so I want to see if it's able to give a comprehensive model of how to evaluate the balance sheets and income statement on what to look for. This is probably going to take a bit of time again. 
+
+And so I'll probably go ahead and cut to this as soon as it is finished loading. 
+
+Okay. It's starting to load a response here. And it says when evaluating a CPA for a Frankie acquisition, there's two metrics that are often used. And it talks about the ones I cited because I have done a little bit of homework on this. Looks like [00:09:00] it is considering a couple of different factors, profitability, client base, location growth, et cetera. And it's actually going to give us an example. 
+
+Okay. So a CPA firm with a million dollars of gross revenue and strong profit margin. And metropolitan area might be at 1.2 gross revenue. Resulting in evaluation 1.2 million. And then it talks a little bit about the SDE approach. So let's see what says about this. Discretionary earnings, et cetera. Factors 1.8 to 3.25. 
+
+Okay. So that's an interesting insight. So basically you're paying like two to three X or maybe a little bit more. Depending SDE margins generally fall between 25% and 75% of revenue. And then it talks a little bit about growth rate team quality CPA firm with 300 K and SDE. Might be at 2.8. Resulting in that $840,000 valuation. 
+
+So that is. Actually a really good starting point. Oftentimes when you're looking at these businesses in the couple I've looked at so far, This is [00:10:00] generally what's reflected on the CIM or the I don't even know if that stands for confidential information memorandum, I think where you can then start to price in or box in whether the pricing is in line with market. 
+
+So this is actually really helpful, too. Evaluate that. 
+
+So this is just a quick example where, literally gave it two questions and it gave a entire comprehensive. Lens into how to think about this. The things to. Focus on. And then more specifically on how you might structure your due diligence process are the things to be looking out for. 
+
+And any of these particular areas you can double click into and ask more questions about to come up with a really robust game plan for whatever research you're trying to explore further or just simply better understand. So again, I just wanted to share, as these models are coming out, how much more powerful the. becoming. And maybe it's just some example use cases, how you can leverage this on a day to day. This deep research product in [00:11:00] particular, I think is really valuable when you got to conduct a lot of research, aggregate a lot of information. and then compile that into a report that is refined down to the key points. At a minimum, this is a good jumping off point to conduct all that research that you would need to do for your report to begin with. 
+
+Every day, I'm amazed at what these models are able to do. And so again, I would encourage you to explore these. Pay the 20 bucks to get the pro access and start to play around with these and see how you can embed them into your day-to-day workflow. That's all I got for now till next time.
+

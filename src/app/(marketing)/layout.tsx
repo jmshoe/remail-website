@@ -2,6 +2,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { JsonLd, organizationSchema, websiteSchema } from '@/components/seo/JsonLd'
 import { GoogleTagManager, GoogleTagManagerNoScript } from '@/components/analytics/GoogleTagManager'
+import { VapiWidget } from '@/components/chat/VapiWidget'
 
 // Allow static pages while supporting client components via proper boundaries
 export const dynamic = 'force-dynamic'
@@ -20,6 +21,7 @@ export default function MarketingLayout({
       <Header />
       <main>{children}</main>
       <Footer />
+      <VapiWidget />
     </>
   )
 }

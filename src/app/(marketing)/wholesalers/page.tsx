@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     title: 'Direct Mail for Wholesalers | Find Motivated Sellers | REmail',
     description:
       'Direct mail automation built for real estate wholesalers. Find motivated sellers and close more deals.',
-    url: 'https://remail.com/wholesalers',
+    url: 'https://remaildirect.com/wholesalers',
   },
   alternates: {
-    canonical: 'https://remail.com/wholesalers',
+    canonical: 'https://remaildirect.com/wholesalers',
   },
 }
 
@@ -55,7 +55,7 @@ const benefits = [
     icon: TrendingUp,
     title: 'Higher Response Rates',
     description:
-      'Our proven templates average 4.2% response rates. Get more calls and more deals.',
+      'Our proven templates average 1.2% response rates. Get more calls and more deals.',
   },
   {
     icon: DollarSign,
@@ -91,8 +91,8 @@ export default function WholesalersPage() {
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: 'Home', url: 'https://remail.com' },
-          { name: 'For Wholesalers', url: 'https://remail.com/wholesalers' },
+          { name: 'Home', url: 'https://remaildirect.com' },
+          { name: 'For Wholesalers', url: 'https://remaildirect.com/wholesalers' },
         ])}
       />
 
@@ -117,7 +117,7 @@ export default function WholesalersPage() {
             <div className="mt-10 flex items-center justify-center gap-4">
               <Button size="lg" asChild className="gap-2">
                 <Link href="/contact">
-                  Start Free Trial
+                  Get Started
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -125,7 +125,7 @@ export default function WholesalersPage() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="border-slate-600 text-white hover:bg-slate-800"
+                className="border-2 border-white/30 bg-white/5 text-white backdrop-blur-sm hover:bg-white/10 hover:border-white/50"
               >
                 <Link href="#features">See Features</Link>
               </Button>
@@ -238,22 +238,21 @@ export default function WholesalersPage() {
               Ready to Close More Wholesale Deals?
             </h2>
             <p className="mt-4 text-lg text-blue-100">
-              Join 500+ wholesalers who use REmail to find motivated sellers.
+              Join wholesalers using REmail to find motivated sellers.
             </p>
             <div className="mt-8 flex justify-center gap-4">
               <Button
                 asChild
                 size="lg"
-                variant="secondary"
-                className="bg-white text-primary hover:bg-blue-50"
+                className="bg-white text-primary hover:bg-blue-50 shadow-lg"
               >
-                <Link href="/contact">Start Free Trial</Link>
+                <Link href="/contact">Get Started</Link>
               </Button>
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/10"
+                className="border-2 border-white/50 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white"
               >
                 <Link href="/pricing">View Pricing</Link>
               </Button>

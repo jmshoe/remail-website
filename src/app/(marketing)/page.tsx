@@ -29,11 +29,11 @@ export const metadata: Metadata = {
     title: 'Automated Direct Mail That Never Stops Working | REmail',
     description:
       'Done-with-you direct mail backed by 20M+ mailers sent. Full transparency, data-driven targeting, and campaigns built to close deals.',
-    url: 'https://remail.com',
+    url: 'https://remaildirect.com',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://remail.com',
+    canonical: 'https://remaildirect.com',
   },
 }
 

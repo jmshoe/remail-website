@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Calendar, Clock, ArrowLeft, Share2 } from 'lucide-react'
 import { getBlogPost, getAllBlogSlugs, getBlogPosts } from '@/lib/mdx'
-import { AuthorBio, BlogCard, mdxComponents } from '@/components/blog'
+import { AuthorBio, BlogCard, MDXContent } from '@/components/blog'
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
@@ -27,6 +27,10 @@ export async function generateMetadata({
     }
   }
 
+  // Build absolute image URL for OpenGraph
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://remaildirect.com'
+  const imageUrl = post.image ? `${baseUrl}${post.image}` : undefined
+
   return {
     title: `${post.title} | REmail Blog`,
     description: post.description,
@@ -38,11 +42,22 @@ export async function generateMetadata({
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
+      images: imageUrl
+        ? [
+            {
+              url: imageUrl,
+              width: 1920,
+              height: 1080,
+              alt: post.imageAlt || post.title,
+            },
+          ]
+        : undefined,
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
+      images: imageUrl ? [imageUrl] : undefined,
     },
   }
 }
@@ -66,12 +81,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     day: 'numeric',
   })
 
+  // Build absolute image URL for JSON-LD
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://remaildirect.com'
+  const schemaImageUrl = post.image ? `${baseUrl}${post.image}` : undefined
+
   // Article JSON-LD schema
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
     description: post.description,
+    ...(schemaImageUrl && {
+      image: {
+        '@type': 'ImageObject',
+        url: schemaImageUrl,
+        width: 1920,
+        height: 1080,
+      },
+    }),
     author: {
       '@type': 'Person',
       name: post.author,
@@ -82,11 +109,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     publisher: {
       '@type': 'Organization',
       name: 'REmail',
-      url: 'https://remail.com',
+      url: baseUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/logo.png`,
+      },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://remail.com/blog/${slug}`,
+      '@id': `${baseUrl}/blog/${slug}`,
     },
     keywords: post.tags.join(', '),
   }
@@ -154,9 +185,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </button>
             </div>
 
+            {/* Hero Image */}
+            {post.image && (
+              <div className="mb-12 aspect-video overflow-hidden rounded-xl">
+                <Image
+                  src={post.image}
+                  alt={post.imageAlt || post.title}
+                  width={1920}
+                  height={1080}
+                  className="h-full w-full object-cover"
+                  priority
+                />
+              </div>
+            )}
+
             {/* Content */}
             <div className="prose prose-slate prose-lg max-w-none">
-              <MDXRemote source={post.content} components={mdxComponents} />
+              <MDXContent content={post.content} />
             </div>
 
             {/* Tags footer */}

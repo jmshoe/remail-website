@@ -1,0 +1,93 @@
+Manus Demo
+===
+
+RØDE NT-USB+ & Canon Digital Camera: [00:00:00] Manus has been the latest hot topic in AI, and so I thought I'd give it a trial run. I finally got access and we're gonna run it through its paces. I'm gonna pull up Manus here and we can take a look at what it's able to do, but the whole idea here is it's essentially a true AI agent. A lot of people were talking about these in the early days.
+
+A lot of 'em didn't work out all that well. Some of you had to run through the terminal, but this is supposedly the first one that's able to go out to the web, run through sites, research data, write code, do all the things that you would probably expect and quote unquote AI agent to be able to do.
+
+If we look at their site here, you can see a number of the examples they give it.
+
+You can actually run back through all of these and. See what the outputs are. So here you see a lot of examples of data analysis where it's conducting research and running some numbers and some examples. Down here, it's actually putting together charts and. In summary statistics there's a productivity section here where it's, finding customers and going through resumes and things of that [00:01:00] nature.
+
+So I have not yet tested this out. We're gonna run it through the first time. The use case I wanna try is actually a real estate use case. One of the problems we run into in real estate is often pricing, A getting reliable price data that can then be used in either underwriting or marketing.
+
+And a lot of times there's a ton of variance between different data sources. And so what I'm gonna have this do is actually run some sort of regression or some statistical modeling to identify either trends or patterns in two different data sources.
+
+And we're gonna see if it's able to give us an algorithm or some sense of. Reliability in the data. And this is actually a practical use case that I think I'd be able to use either independently or even across from my clients. 
+
+all right, so we're gonna go ahead and upload the file here. I believe there's something like 20,000 records, so we should have plenty of data to be looking at, and we're gonna just see what it's able to do.
+
+So we're gonna say, attached to the file of property records with a valuation as well as a secondary data source, providing an estimated [00:02:00] value, provide an analysis on the correlation of the prices. Provide insights and observations and provide an algorithm 
+
+to determine a predicted value based on your findings. So we're gonna go ahead and run this, and let's just see what happens.
+
+So it says it's initializing a sandbox. Let's see what that entails. So conceivably what this is supposed to do, it is gonna basically create its own container where it's then going to leverage that to essentially either search the web run code, conduct its own analysis. And so I'm assuming when it says initializing a sandbox, it's getting that sort of environment set up so it can actually.
+
+Do its thing so we'll give this a couple minutes and check back in.
+
+Okay, we're in business after a couple failed attempts. We, it looks like it's actually running now. We cut down the file from initially 20,000 down to 10. That did not work. Then we cut it down to five. But now it looks like Manus is running. 
+
+So it says I'll analyze the property records to examine correlation, et cetera, et cetera.
+
+It looks like it's running through sort of its own process to think through what actually to [00:03:00] do. Looks like it's actually running some Python as well. So we're gonna continue to let this run and see where it lands.
+
+Okay, so let's just check back in on this. It's still running. It's been a number of minutes so far. But let's go ahead and take a look at actually what it's doing. It first pulled in the file. You can see it pulled in the CSV here. It looks like it constructed some python to run some analysis. Here it's actually looking at running a price correlation between the valuation and estimated values which is running through another Python script. It's then executing some additional commands here to apply some statistical models against it. And it looks like it's actually preparing some visualizations, so I'd be curious to see what those look like.
+
+And then it actually had to install some dependencies, so some Python packages, which you can see it doing here in order to run that analysis as well. And then it just continues to step through its plan. Here it says identify key insights and patterns. So then it's applying a couple other approaches.
+
+And then it looks like it actually [00:04:00] created a Key Insights md, so that's gonna be like a markdown file. That we'll be able to review at the end of this. And then here it's developing a predictive pricing algorithm. I'll be curious to see what that looks like based on the correlation that it found.
+
+Next up it will actually test its own algorithm, so I'll be curious also to see what that looks like. As you can see, it's actually using terminal, right? So it's running code to, to run all this analysis.
+
+My first glance at this, it looks like it's a little bit more comprehensive than what might find on, open AI's 4o model in terms of the level of coding and depth that's going into to generate Python to run its analysis. Generally it's a little bit more superficial.
+
+But then again, we haven't seen the results here yet. So I'm not gonna be too quick to judge. 
+
+But so far really like this sort of like chain of thought reasoning approach and it's taking several steps to run the analysis. We'll check back in here in a couple minutes and see where it lands.
+
+It looks like right now it is creating a comprehensive report. Maybe if we're lucky, it'll actually go ahead and put this [00:05:00] out before I have to come back. It looks like it's actually preparing some data visualizations which I'm excited to see as well. So we'll hit pause here and check back in here in a minute.
+
+Okay, we are back. So let's see. What has done for us? If I scan over here on the left and let's see if I look over here on the right, see what we're working with. Okay, so it looks like correlation is high 83% roughly. Key patterns that notice that accuracy varies by geo.
+
+And then also price ranges, I'm assuming like price tiers. So I'll be curious to see what it tells me about that. I did develop a algorithm which improved its overall correlation relative to that the absolute error rate. So that is ideal. Let's see what else we got here. So we can click on some of these visualizations.
+
+Created these files. 
+
+Let's go ahead and take a peek at [00:06:00] some of these. That's pretty awesome. The fact that it's able to like, put this together, I could easily put this together in Google Sheets, but the fact that it did it for us dropped in. This would save you, 15, 20 minutes in, in generating this yourself.
+
+Obviously this probably took I would say 10 minutes to run. Roughly, but it's it's plotting out all the the prices and then drops in a trend line here and you can start to already see like the variance in, in outlier moves. Let's see what else it has in here. Looks like it's then segmenting by some of the states that we had in the dataset.
+
+Here it is looking at, distribution of the variance effectively. So good news is there's a high density of very low variance and it's like tightly bound, but you also see that there's some massive deltas on, on, on the fringe tails. Let's go ahead and take this look over here.
+
+This looks like it's the model or the algorithm that it produced for us, so I'd be curious to see what that formula looks like.
+
+Then it looks like, wow, it even did like a deeper feature analysis. Predominantly looking [00:07:00] at price bands or tiers. And then also looking at basically states and then even down to the city and maybe even county level. So that's pretty interesting as well. Let's go ahead and take a look at this.
+
+It is essentially digging deeper into sort of the variance by some of the cities in the dataset as well. 
+
+Let's go ahead and pop over here and see what kind of summary it gave us. So it runs us through its analysis, pulls out some key insights.
+
+So it's summarizing the dataset characteristics. All of that is accurate. It looks like it did cleanse some of that. Maybe there's some bad data or duplication in there, which it talks about here as well. Then it runs you through its entire analysis. It gives you all the key stats you would expect to see.
+
+I'm assuming these are all referenced to those same visuals over there. But yeah, ideally they fix that up.
+
+This is a relatively new platform, so not too surprised that there are some deltas or issues there. Let's see. We developed and tested multiple machine learn, multiple machine learning models to predict the values.
+
+Based on the [00:08:00] estimates and additional features, we did not give it a ton of features it looks like that would be a good possibility. The fact that it's able to essentially build these machine learning models and these are the kind of things like back in my FinTech days, these are all the same models that our data science team would've been using.
+
+And the fact that it found, advanced gradient boosting, we would use XG Boost. I wouldn't be surprised if it was actually the same model and this is how they would get to their much higher. Confidence score. So it looks like that is the model of choice. I'd be curious to see how to actually apply it to a new data set and if actually give you the script for that.
+
+It does look like they give you the script for that. Amazing. We scanned down here, I think future state, I would probably include more features within the dataset so that it had more to work with and might even be able to get a tighter. Predictor of the values. And then it looks like here it actually gives us the the script to run this example.
+
+We look over here, it's actually giving you an example of the. Predictor [00:09:00] model that it gave you, and this, so this is an actual application of the estimate, but if we actually look over here, it actually outputs a ton of files. So not only the report that it gave us, but also the PNG of all the charts and whatnot.
+
+And then presumably it also give us the Yep, there you go. So it gives us the Python file to actually then take the. Machine learning model that it created based on the input data so that, and I could then apply this to future data sets, which is incredible. And then my next step of this would be to actually test this and see how well it does to sort of refine our sort of pricing algorithm here.
+
+But nonetheless yeah, this is about as comprehensive as I would've expected. So far, this is a awesome use case. 
+
+The other versions I've seen of this is that it's actually going out to the web. It's scraping data, and then you can repackage that in other ways. So far for this use case, for more of a data analysis type example where it's actually running Python, it's taking it a couple steps further than I've seen these other models do it.
+
+And to the [00:10:00] fact that it's actually giving you the Python script that you could then run on that same data set is is really incredible. So overall so far, this is two thumbs up for me. I'm pretty impressed with this. I'm gonna continue to play with this and I'm just always amazed every day all the new stuff that's coming out.
+
+And this one is definitely so far worth the hype. I'm gonna continue to see what it's all about and push the boundaries on what's possible here. So that's all I got on Manus for now. If you have the opportunity, check it out. You do have to request a access code, but it did not take very long for me to get mine. So go check it out, play around with it, and enjoy.
+

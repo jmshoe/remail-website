@@ -1,0 +1,89 @@
+Google Sheets to Supabase
+===
+
+RØDE NT-USB+ & Canon Digital Camera: [00:00:00] If you're running your business off a spreadsheet, it's time to step up your game. Don't get me wrong, Google. Sheets and the like I'll have a place in your business. But when you're dealing. Dealing with large data sets and especially when you need reliable data, that's updated in near real time, you want to have the ability to build visuals and. And get deeper insights into your business you really need to level up and have a proper database in place. 
+
+I want to share with you an example of how to leverage a, platform like Supabase, which is the Postgres database and how you can actually integrate it into a free tool like Looker, which is a Google product and get up and running in a matter of minutes or hours. 
+
+So let's go ahead and jump into it. 
+
+First off here's one example. How often have you come up with this? This issue where you've tried to load a spreadsheet from Google sheets and boom. Can't preview can't load it. It's basically unworkable best case scenario. You have to download it to your local machine, but this makes it difficult to share with other people on your team and almost impossible to make data ubiquitous, which is the entire point of data and reporting in general, you need to make it [00:01:00] readily accessible by the broader team. So let's go ahead and get over to supabase. 
+
+Here's their website. You can see, this is essentially just a Postgres database. It's API driven, which is why I love it. And there's a ton of apps. They continue to iterate and add over time. So I want to go and show a quick example and we're actually just going to 
+
+load up a sample data sets. 
+
+We're going to go ahead and call this demo. So you can actually get the table started by importing a CSV, and this will provide the full structure of what you want. Let's go ahead and grab this sample file here. It's going to import everything and drop in all of our columns. We can then go ahead, hop in here and. What I'm going to do is actually normalized these all to texts, just to make it very simple and clean. And we will go ahead and hit save. 
+
+All right. So now we have our demo data set in here. And actually what I want to do is we're going to edit one last thing. One of the key things that is important when working with Postgres [00:02:00] databases or relational databases in general, as you want to have a primary key. And so what we're actually going to do is go ahead and add a column. 
+
+We want to call that column ID. We are going to make this text and we are going to tell this to do gen random uuid. 
+
+And what this is gonna do is create a unique ID for every record in the database. This becomes incredibly important because when it comes to updating records or merging in other tables, you can use this identifier to match records. This is what people commonly refer to as de-duping a file. 
+
+Well, this allows the database to do it for you. So let's go ahead and add that and we will hit save. 
+
+And if I scan over here, what we should see is a ID generated. All of these are unique keys, so I can reference a particular record. In general. And it's just literally, as simple as that, now the beautiful thing here is that we can then start to leverage the Supabase API can, we can actually update in search for records based on this ID. 
+
+And we can then start to. [00:03:00] Iterate on this over time update records at will.
+
+Now once you have your supabase table built out. The next thing you want to do is actually build out some level of visual reporting, these table type views. Aren't the most useful. So let's go ahead and hop over to Looker and start building out some of those views. 
+
+So you can go ahead and Google Looker studio, not to be confused with Looker. Looker was a startup that was then acquired by Google and they made their own free version of this called Looker studio, which you can really easily plug and play your Postgres database into. 
+
+And so we're going to go ahead and create a new report. And it's going to open up something like this. And what we want to do is actually connect that table into this so that we can actually build some views and create some interesting visuals. So let's go ahead and search for Postgres. 
+
+And we are going to connect it through this connection. 
+
+We're going to hop back over to our table. We're just going to copy over the settings [00:04:00] to connect to the database and we're in a copy. The host. 
+
+When a copy of the port. 
+
+The name. 
+
+Our user. 
+
+And. 
+
+Password. 
+
+So once we authenticate that it'll connect to the table and you can see our demo tables in here, we'll then go ahead and add that. So once we've connected 
+
+the data, we can actually then use it to report. And as you can see in here, we already have a couple views. I'm going to go ahead and drop that. 
+
+And what's nice about Looker is you can get all sorts of visuals in here as needed. 
+
+So, for example, we could maybe just grab a full record counts. And this is going to be essentially the record count. That's currently in that table. If I pop over here, you can see that it's referencing our Postgres data source connection, and it's literally just counting everything that is in there. We then could add a table preview to this. And let's just drop this in here and there we go. 
+
+We have counts and maybe I'd actually don't want to see counts. [00:05:00] Maybe I want to see something different. 
+
+Let's go ahead and add sales price, and it looks like it's not actually enabling me to calculate it. So we actually go back into the data set itself. 
+
+We can then edit. 
+
+The type of data coming through so that we can get a. 
+
+Average some, and we'll say, this is, let's say this is a currency. We'll say us dollars. And we will set that. 
+
+Okay. Let's say we wanted to go ahead and add in price in here so we can see the price of each of these. Now let's say we wanted to add in another chart. And so we wanted to look at counts by zip code, potentially. We can drop that in here. 
+
+And let's drop this field. It's actually make this zip code. Well, the property is zip code and we will do record count by property, zip code and. Let's actually go ahead and format. 
+
+Zip code. 
+
+And we will make this. 
+
+And so now we can actually view this as we like, and let's say, actually want to see the numbers [00:06:00] on that chart there, we can actually go and say, show data labels. 
+
+And so now you can see, 
+
+you can quickly set up some BI. Reporting on top of your database. 
+
+This was just a quick and dirty example, obviously of how to set up tables in supabase. 
+
+Obviously at scale and over time, you're collecting a ton of data, whether it's from your CRM, whether it's from data sources outside of your CRM. Your ability to how's this in a single location and your ability to join that data together in a meaningful way, and then be able to essentially build this type of level of reporting on top of that will give you better insights into how your business is performing and enable you to make informed decisions about what you need to be doing in your business to actually move the needle. 
+
+So hopefully this was a helpful view into how to think beyond Google sheets and hopefully elevate your business to another level. Feel free to check out some of these tools. As I said, lookers free supabase is a really inexpensive option when it comes to standing [00:07:00] up your own database. 
+
+As always feel free to reach out if you have any questions.
+

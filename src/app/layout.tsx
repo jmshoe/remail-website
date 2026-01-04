@@ -12,7 +12,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://remail.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://remaildirect.com'),
   title: {
     default: 'REmail - Direct Mail Automation for Real Estate Investors',
     template: '%s | REmail',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://remail.com',
+    url: 'https://remaildirect.com',
     siteName: 'REmail',
     title: 'REmail - Direct Mail Automation for Real Estate Investors',
     description:

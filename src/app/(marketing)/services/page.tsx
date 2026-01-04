@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   Mail,
   Search,
@@ -28,10 +29,10 @@ export const metadata: Metadata = {
     title: 'Direct Mail Automation Services | REmail',
     description:
       'Complete direct mail automation for real estate investors. Campaign management, skip tracing, and more.',
-    url: 'https://remail.com/services',
+    url: 'https://remaildirect.com/services',
   },
   alternates: {
-    canonical: 'https://remail.com/services',
+    canonical: 'https://remaildirect.com/services',
   },
 }
 
@@ -50,6 +51,8 @@ const services = [
       '3-5 day delivery',
       'USPS tracking',
     ],
+    image: '/images/services/direct-mail-campaigns.jpg',
+    imageAlt: 'Clean postcards and letters on a modern workspace, showcasing direct mail automation',
   },
   {
     id: 'skip-tracing',
@@ -65,6 +68,8 @@ const services = [
       'Real-time lookups',
       'High match rates',
     ],
+    image: '/images/services/skip-tracing.jpg',
+    imageAlt: 'Modern data visualization dashboard with search interface, representing skip tracing technology',
   },
   {
     id: 'lists',
@@ -82,6 +87,8 @@ const services = [
       'High equity',
       'Custom filters',
     ],
+    image: '/images/services/list-building.jpg',
+    imageAlt: 'Modern map visualization with property markers, representing smart list building',
   },
   {
     id: 'templates',
@@ -97,6 +104,8 @@ const services = [
       'QR codes',
       'Professional design help',
     ],
+    image: '/images/services/template-designer.jpg',
+    imageAlt: 'Design interface mockup showing postcard templates and design tools',
   },
   {
     id: 'analytics',
@@ -112,6 +121,8 @@ const services = [
       'Call tracking',
       'Conversion attribution',
     ],
+    image: '/images/services/campaign-analytics.jpg',
+    imageAlt: 'Modern analytics dashboard with charts and graphs showing campaign metrics',
   },
   {
     id: 'drip',
@@ -127,6 +138,8 @@ const services = [
       'Sequence builder',
       'Performance tracking',
     ],
+    image: '/images/services/drip-campaigns.jpg',
+    imageAlt: 'Workflow visualization showing automated campaign sequences and timelines',
   },
 ]
 
@@ -135,8 +148,8 @@ export default function ServicesPage() {
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: 'Home', url: 'https://remail.com' },
-          { name: 'Services', url: 'https://remail.com/services' },
+          { name: 'Home', url: 'https://remaildirect.com' },
+          { name: 'Services', url: 'https://remaildirect.com/services' },
         ])}
       />
       <JsonLd
@@ -150,15 +163,15 @@ export default function ServicesPage() {
       {/* Hero */}
       <section className="bg-slate-50 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
+          <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Direct Mail Automation Services
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <p className="mt-6 text-lg text-muted-foreground">
               Everything you need to run successful direct mail campaigns.
               From list building to analytics, we have got you covered.
             </p>
-            <div className="mt-8 flex justify-center gap-4">
+            <div className="mt-10 flex justify-center gap-4">
               <Button asChild size="lg">
                 <Link href="/contact">Get Started</Link>
               </Button>
@@ -215,7 +228,15 @@ export default function ServicesPage() {
                     index % 2 === 1 ? 'lg:order-1' : ''
                   }`}
                 >
-                  <div className="aspect-video rounded-lg bg-slate-200" />
+                  <div className="aspect-video relative rounded-lg overflow-hidden bg-slate-200">
+                    <Image
+                      src={service.image}
+                      alt={service.imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
                 </div>
               </div>
             ))}
@@ -236,8 +257,7 @@ export default function ServicesPage() {
             <Button
               asChild
               size="lg"
-              variant="secondary"
-              className="mt-8 bg-white text-primary hover:bg-blue-50"
+              className="mt-8 bg-white text-primary hover:bg-blue-50 shadow-lg"
             >
               <Link href="/contact">Get Started Free</Link>
             </Button>

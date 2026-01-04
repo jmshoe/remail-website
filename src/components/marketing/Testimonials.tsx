@@ -34,9 +34,9 @@ const testimonials = [
 ]
 
 const stats = [
-  { value: '500+', label: 'Active Investors' },
+  { value: '5.2x', label: 'Avg ROAS' },
   { value: '2.4M', label: 'Mailers Sent' },
-  { value: '4.2%', label: 'Avg Response Rate' },
+  { value: '1.2%', label: 'Avg Response Rate' },
   { value: '$12M+', label: 'Deals Closed' },
 ]
 

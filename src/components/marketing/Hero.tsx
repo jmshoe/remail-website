@@ -1,7 +1,11 @@
-import Link from 'next/link'
-import { ArrowRight, CheckCircle, Play } from 'lucide-react'
+'use client'
+
+import { useState } from 'react'
+import { ArrowRight, CheckCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { CalBooking } from '@/components/marketing/CalBooking'
+import { BlueprintModal } from '@/components/forms/BlueprintModal'
 
 const highlights = [
   '20M+ mailers sent',
@@ -10,6 +14,8 @@ const highlights = [
 ]
 
 export function Hero() {
+  const [blueprintModalOpen, setBlueprintModalOpen] = useState(false)
+
   return (
     <section className="relative overflow-hidden bg-white">
       {/* Background decoration */}
@@ -25,7 +31,7 @@ export function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
-            Trusted by 500+ Real Estate Investors
+            Built on 20M+ Mailers Sent
           </Badge>
 
           <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
@@ -50,17 +56,17 @@ export function Hero() {
 
           {/* CTAs */}
           <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <Button size="lg" asChild className="gap-2 shadow-lg shadow-primary/25">
-              <Link href="/contact">
-                Get Free 7-Figure Direct Mail Blueprint
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+            <Button
+              size="lg"
+              className="gap-2 shadow-lg shadow-primary/25"
+              onClick={() => setBlueprintModalOpen(true)}
+            >
+              Get Free 7-Figure Direct Mail Blueprint
+              <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button size="lg" variant="outline" asChild className="gap-2">
-              <Link href="/contact">
-                Schedule Strategy Session
-              </Link>
-            </Button>
+            <CalBooking mode="button" variant="outline" size="lg">
+              Schedule Strategy Session
+            </CalBooking>
           </div>
 
           {/* Social proof */}
@@ -110,7 +116,7 @@ export function Hero() {
                     <div className="h-3 w-3 rounded-full bg-yellow-500" />
                     <div className="h-3 w-3 rounded-full bg-green-500" />
                   </div>
-                  <div className="text-xs text-slate-400">dashboard.remail.com</div>
+                  <div className="text-xs text-slate-400">dashboard.remaildirect.com</div>
                 </div>
 
                 {/* Mock stats */}
@@ -120,7 +126,7 @@ export function Hero() {
                     <p className="text-xs text-slate-400">Mailers Sent</p>
                   </div>
                   <div className="rounded-lg bg-slate-700/50 p-4">
-                    <p className="text-2xl font-bold text-accent">4.2%</p>
+                    <p className="text-2xl font-bold text-accent">1.2%</p>
                     <p className="text-xs text-slate-400">Avg Response</p>
                   </div>
                   <div className="rounded-lg bg-slate-700/50 p-4">
@@ -140,7 +146,7 @@ export function Hero() {
                   </div>
                   <div className="flex items-center justify-between rounded-lg bg-slate-700/50 p-3">
                     <div>
-                      <p className="text-sm font-medium text-white">Pre-Foreclosure - Austin</p>
+                      <p className="text-sm font-medium text-white">Pre-Foreclosure - Charlotte</p>
                       <p className="text-xs text-slate-400">850 recipients • Data-driven</p>
                     </div>
                     <Badge variant="secondary">Scheduled</Badge>
@@ -164,6 +170,12 @@ export function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Blueprint Modal */}
+      <BlueprintModal
+        open={blueprintModalOpen}
+        onOpenChange={setBlueprintModalOpen}
+      />
     </section>
   )
 }

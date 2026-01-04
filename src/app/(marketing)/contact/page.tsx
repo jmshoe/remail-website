@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 import { ContactForm } from '@/components/forms/ContactForm'
 import { JsonLd, breadcrumbSchema } from '@/components/seo/JsonLd'
+import { CalBooking } from '@/components/marketing/CalBooking'
 
 export const metadata: Metadata = {
   title: 'Contact Us | REmail Direct Mail Automation',
@@ -11,10 +12,10 @@ export const metadata: Metadata = {
     title: 'Contact Us | REmail Direct Mail Automation',
     description:
       'Get in touch with the REmail team. Questions about direct mail automation for real estate?',
-    url: 'https://remail.com/contact',
+    url: 'https://remaildirect.com/contact',
   },
   alternates: {
-    canonical: 'https://remail.com/contact',
+    canonical: 'https://remaildirect.com/contact',
   },
 }
 
@@ -22,19 +23,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@remail.com',
-    href: 'mailto:hello@remail.com',
+    value: 'support@remaildirect.com',
+    href: 'mailto:support@remaildirect.com',
   },
   {
     icon: Phone,
     label: 'Phone',
-    value: '(555) 123-4567',
-    href: 'tel:+15551234567',
+    value: '(980) 277-7437',
+    href: 'tel:+19802777437',
   },
   {
     icon: MapPin,
     label: 'Address',
-    value: 'Austin, TX',
+    value: 'Charlotte, NC',
     href: null,
   },
   {
@@ -50,8 +51,8 @@ export default function ContactPage() {
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: 'Home', url: 'https://remail.com' },
-          { name: 'Contact', url: 'https://remail.com/contact' },
+          { name: 'Home', url: 'https://remaildirect.com' },
+          { name: 'Contact', url: 'https://remaildirect.com/contact' },
         ])}
       />
 
@@ -123,14 +124,11 @@ export default function ContactPage() {
                 <p className="mt-2 text-slate-400">
                   Book a free demo call with our team to see REmail in action.
                 </p>
-                <a
-                  href="https://calendly.com/remail/demo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary/90 transition-colors"
-                >
-                  Schedule a Demo
-                </a>
+                <div className="mt-4">
+                  <CalBooking mode="button" variant="default" size="lg">
+                    Schedule Demo
+                  </CalBooking>
+                </div>
               </div>
             </div>
           </div>

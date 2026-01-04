@@ -1,0 +1,79 @@
+Vibe Coding - Square
+===
+
+[00:00:00] So I recently stumbled across this topic of vibe coding and how it's gonna impact how engineers engineer code and what it means for product management. And I thought it was incredibly fascinating. And so I actually want to do sort of a reaction to a recent discussion held by, some of the people over at Y Combinator and talking about this concept of vibe coding.
+
+Which was, commented on by Andrej Karpathy. So let's go ahead and just jump into it. And, I wanna kinda reflect on some of the things we're talking about and how AI is sort of changing the face of engineering, product management, product development, and sort of this concept of product engineering and sort of the shift between skill sets and where engineers and product managers are spending their time.
+
+So let's go ahead and take a look at it.[00:01:00] [00:02:00] 
+
+All right. Pause there. So. They're already kind of highlighting this concept of merging software engineering into product engineering, which I think it makes a ton of sense. My first reaction coming from like the product side and interacting with some of these tools like a Bolt new or these guys talk a lot about Cursor and just your ability to go from concepts or idea.
+
+Sort of removing this friction point of actually the development and the coding and not necessarily having like the historical knowledge on how to do so you can leverage these platforms to actually build something on that idea very quickly. And I sort of start to see this sort of merging of those two roles when it comes to building new products.
+
+And I think the benefit of, you know, having an engineer transition closer to like the product. Side of it is thinking through sort of the interactions they already have sort of the system understanding of how to build [00:03:00] products and to be able to leverage AI to actually write the code and put the outputs out there that much faster without having to write line by line by line.
+
+You can start to move that much faster and identify structural issues or focus on bugs and get to the output and the outcome that much faster of building the feature or the MVP or whatever the scenario may be. And so this is kind of like the first key thing they kind of highlighted where I was like, aha, that is the trend that I'm gonna see here.
+
+And I'm already starting to feel, from my perspective. So I thought that was really interesting. 
+
+Let's continue. [00:04:00] Okay.
+
+That point is also super interesting. Your ability to iterate and try out different sort of structural approaches or just rewrite the code, like the iteration and the time investment to actually write the code or, or build a feature and then just have this sort of like bandwidth to immediately throw it away, try again, knowing that it's not gonna take that much effort or that much time to actually execute on that.
+
+To me, that just leads to better outcomes overall because your sort of number of occurrences that you're able to actually put out there and test and the speed to execute is that much faster, makes this way more interesting in terms of your ability to get to a better outcome faster.
+
+So I thought that part and that theme in this entire topic is, is really interesting as well.
+
+[00:05:00] Also super interesting, like the fact that you can actually simultaneously write code in sort of like two different domains at the same time, leveraging the models to do so, and just checking in on it or reviewing it incrementally as the model is kind of spitting out the code. I. Again, like that alone is sort of a force multiplier in terms of feature development and being able to build, you know, two or three features at the same time.
+
+And also the fact that the AI's writing the code, this just evidence is sort of like the force multiplier here. And they talk about, you know, people being three x, 10 x, a hundred x in some of the examples they talk here. So I thought that was really interesting as well. 
+
+I think that's the key thing [00:06:00] here for sure. There's gonna be sort of this collapsing of the typical structure and how product is built, and there's gonna be this merging of engineers. And product people. And I think that on the product side, you have to be technical in, in nature, or at least have some, some muscles there in order to be able to think systematically about how things are built.
+
+And it's gonna draw you into being, from being maybe more surface level or more u ux and design type focus. And I think on the engineering side, it's gonna pull those individuals outta like the, the deep engineering needs and you're gonna rely less on that and have to think more about the product and the, and the user.
+
+So I see this sort of convergence between those types of roles. Of course, there's still gonna be like deep backend stuff, server type stuff. All those traditional things I think will be there but for sure there's definitely an augmentation of, of how these roles are gonna be interacting. [00:07:00] [00:08:00] so I can attest to this as well. Anytime I've coded with some of these platforms, you inherently run into bugs. You run into things the model missed, or it might have not had all the context. And it still does require some level of technical know-how in order to sort of pinpoint that problem or ask the right questions to try to get closer to identifying that problem.
+
+I suspect these models will get better at it and, especially when you start looking at some of these reasoning models or like the longer context window models, you can start to solve for these things much faster. But, [00:09:00] definitely the number of bugs and issues kind of, correlate to the complexity of the.
+
+The code and, and the platform that you're working on. But this is still sort of a fundamental issue and I think it, you know, it goes to say that you still need some, somebody in, in the loop, a human in the loop to sort of like work through these types of issues. So I think this is a really good point.[00:10:00] [00:11:00] [00:12:00] 
+
+Let's pause there really quick. So what I found interesting about this is actually they left out a couple platforms that I would've expected 'em to talk about. And I think this just kind of goes to show that there's a divide between the end user and the type of platform. So they talk a lot about cursor cursor's, effectively a fork of visual studio.
+
+And it's a new IDE that's like fully thought through with AI in mind. It's AI first, development sort of software. Predating that was copilot, which was really just a plugin into the IDE and maybe not quite as [00:13:00] powerful. And then they also call out Windsurf and Devin. Those are actually relatively new to me.
+
+This idea of indexing the code will probably be a gap that will be solved for across the platforms. I don't see how that's a big hurdle to, to overcome where those gaps might live. The platforms they did not call out. So what I would say about those ones is those are more geared towards like tried and true engineers, right?
+
+People that are already used to that IDE environment, they're writing lines of code and, and it's a natural fit for them. The other ones that are newer and more popular that I've personally interfaced with and I think are more sort of built for maybe the less technical, the non-engineering type individual, um, would be like bolt.New.
+
+There's Replit, there's Lovable. Those are three that are more like prompt driven code to you. You, you essentially give it the prompt of what you want and then it, it, it'll build the app from there. And you spend less time actually in the code. Now it does show you the code in a lot of these cases and there's variations of each of the experience of those three platforms.
+
+The audience here makes a lot of sense, right? These are Y Combinator startups, these are, you know, true teams of [00:14:00] engineers, and probably some product folks. But, I thought that was interesting 'cause those are also really powerful and I've had a lot of success building some tooling and some platforms.
+
+On things like bolt and Replit. So, I would also throw those names in the hat, but I think if you need like the true, development IDE type experience cursor and, and some of these are, are very popular as well.
+
+[00:15:00] Okay.
+
+All right. So I think that's really interesting as well. And I think this is consistent with, a lot of things I've personally seen. Kinda what you hear out there, Gemini is still kind of playing catch up. They just came out with 2.0. I have used it. I like their deep research functionality, but it's definitely not my, my go-to, on the open AI side ChatGPT-4o, I think it's pretty good.
+
+But I actually personally find myself defaulting to Claude. Claude, they mentioned 3.5, but they actually just came out with 3.7. And it's really robust. I get really good answers out of it, and, fewer bugs and it's much more comprehensive in terms of the output. So I would, I would sort of concur with their assessment here.
+
+Claude's really strong. I haven't messed around with r1 as much. And these tend to be some of the underlying models that are embedded in a lot of these tools as well. So, I thought that was a very consistent sort of observation that they shared.
+
+[00:16:00] That's crazy. So 25% of the people they surveyed, 95% of the code they wrote was written by ai. That's wild. I think that's gonna continue to creep up. I, I imagine the percentage of the population where that answer is true is gonna continue to increase. And yeah, I think that remaining 5% is things like debugging or minor tweaks, minor adjustments.
+
+But that just really goes to show especially. Again, why Combinator startups like these are the cream of the crop people that are building [00:17:00] things, to scale into really large companies. That's the power that, that AI is having and, and the impact it's having in this domain. [00:18:00] 
+
+I think that's a good spot to stop. This goes on for probably another 15 or 20 minutes. I would check it out. It's called Vibe Coding is the Future. It's on Y Combinators YouTube channel. but that last thought there, I think is, one of the, the big takeaways on this concept of vibe coding, who knows if that term will stick, but nonetheless, the idea here is.
+
+What AI is able to do in this [00:19:00] particular domain is remove a ton of the friction in order to create something that's, that's valuable. Uh, creating software, creating a SaaS business, and it's essentially opening up the aperture of the people that are able to create value through sort of this vehicle and, remove the heavy lifting of a lot of the development and the coding, and get to results and outputs that much faster.
+
+So I'm incredibly fascinated by AI and its application in the engineering space and development and, and building products. 
+
+Definitely something to continue to keep an eye on. If you haven't already, I would encourage you to go check out some of these platforms. If you're less technical, check out like a bolt new or Replit and just prompt it. I think this concept of, you know, maybe you're not building a multi-billion dollar startup or business, but your ability to even build an application for your own use and your own purpose, that maybe you just independently want to use to improve your own productivity.
+
+The impacts here are, are tremendous in order for you to like, solve problems faster. So that's all I wanted to share on this. I think it's [00:20:00] incredibly interesting on, the trends that are occurring here and how quickly these things are developing. As always, feel free to reach out if you have questions, or figuring out how to leverage these types of tools in your own business.
+
+Till next time. 
+

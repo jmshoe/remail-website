@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     title: 'Direct Mail for House Flippers | Find Off-Market Deals | REmail',
     description:
       'Direct mail automation for fix and flip investors. Find distressed properties and source more deals.',
-    url: 'https://remail.com/flippers',
+    url: 'https://remaildirect.com/flippers',
   },
   alternates: {
-    canonical: 'https://remail.com/flippers',
+    canonical: 'https://remaildirect.com/flippers',
   },
 }
 
@@ -89,8 +89,8 @@ export default function FlippersPage() {
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: 'Home', url: 'https://remail.com' },
-          { name: 'For Flippers', url: 'https://remail.com/flippers' },
+          { name: 'Home', url: 'https://remaildirect.com' },
+          { name: 'For Flippers', url: 'https://remaildirect.com/flippers' },
         ])}
       />
 
@@ -115,7 +115,7 @@ export default function FlippersPage() {
             <div className="mt-10 flex items-center justify-center gap-4">
               <Button size="lg" asChild className="gap-2">
                 <Link href="/contact">
-                  Start Free Trial
+                  Get Started
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -123,7 +123,7 @@ export default function FlippersPage() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="border-slate-600 text-white hover:bg-slate-800"
+                className="border-2 border-white/30 bg-white/5 text-white backdrop-blur-sm hover:bg-white/10 hover:border-white/50"
               >
                 <Link href="#lists">See Target Lists</Link>
               </Button>
@@ -272,16 +272,15 @@ export default function FlippersPage() {
               <Button
                 asChild
                 size="lg"
-                variant="secondary"
-                className="bg-white text-primary hover:bg-blue-50"
+                className="bg-white text-primary hover:bg-blue-50 shadow-lg"
               >
-                <Link href="/contact">Start Free Trial</Link>
+                <Link href="/contact">Get Started</Link>
               </Button>
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/10"
+                className="border-2 border-white/50 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white"
               >
                 <Link href="/pricing">View Pricing</Link>
               </Button>

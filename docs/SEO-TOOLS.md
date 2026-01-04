@@ -141,4 +141,4 @@ The project previously attempted to use the DataForSEO MCP server, but encounter
 If you want to try MCP:
 - Use `DATAFORSEO_USERNAME` (not `DATAFORSEO_LOGIN`) for MCP compatibility
 - Ensure env vars are passed to the MCP server process
-- See `.claude/mcp-setup.md` for MCP configuration details
+- See `.claude/mcp/mcp-setup.md` for MCP configuration details

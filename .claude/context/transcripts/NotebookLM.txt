@@ -1,0 +1,71 @@
+NotebookLM
+===
+
+RØDE NT-USB+ & Canon Digital Camera: [00:00:00] AI's ability to accelerate you from not knowing anything about a given topic to closing the gap to giving you at least a foundational understanding of a new topic or maybe even become expert level is incredible. And so I wanted to share with you two tools that I've been playing around with lately that are absolute game changers when it comes to conducting research, synthesizing a ton of information and getting out of it the key bits of details that you need in order to make a decision or move in a new direction for whatever the topic may be.
+
+I've been talking a lot about Google lately, Gemini, and a lot of its products, and I'm actually going to showcase two of them right now In terms of how you can leverage it to conduct a ton of research in a very short span of time. So you can actually speak intelligently about a new topic or new domain that you may be entering into.
+
+So the first thing I want to pull up here is a Gemini product called Deep Research, which I've talked about before, and we're going to use this as a starting point. 
+
+I think about these [00:01:00] two tools in sort of two buckets. One is sort of, I need to go collect a bunch of information and I'm not quite sure where it lives or where to get it from.
+
+And I'm going to have Gemini do the work for me. The second bucket is I have a plethora of information and resources, whether it's. Google Docs, PDFs, YouTube videos, whatever it may be that you want to tap into and try to extract the key insights to, formulate that into whatever the purpose is. It could be a report, could be an article, a blog topic, whatever the case may be to actually give you the highlights and the key bits of information that you need.
+
+And so I've been really fascinated about this prospect of buying a business and, exploring different business types and actually, you know, how people are doing this and what I can learn from them. And so we're going to actually going to use that as an example here and run through if I were to buy an accounting firm, what would that look like, given that I know nothing about an accounting firm, how to value them, how they operate and.
+
+the things that I should be considering when going through that [00:02:00] process. 
+
+So I'm going to pull up Gemini here and their deep research model And we're going to start by giving a simple prompt asking it to give us a high level understanding of the accounting practice business model, and the things that I should be looking out for as a starting point, that should then give us a Google Doc, which we'll use as input to Notebook LLM, which is another Google product.
+
+And to that, we're actually going to embed some YouTube videos of guys talking about this very topic to see what we can learn from it.
+
+Okay, so we're gonna say give me a comprehensive report on the accounting industry and considerations when assessing the purchase of an accounting firm in terms of valuation, risks, and management. So let's go ahead and kick this off and we will have Gemini prepare a report for us on this very topic.
+
+Now this does take several minutes, so we're gonna go ahead and let it do its thing. It's put together its game plan for the research it's going to conduct. We're going to hit start and I will cut back once it's done.
+
+RØDE NT-USB+ & Canon Digital Camera-1: Okay, so [00:03:00] Gemini Deep Research has done its thing, and it has finalized its report on accounting firm acquisition analysis. And so you can see here, it's pulled a pretty comprehensive report outlining all the things that we care about, understanding the types of accounting firms, challenges, so on and so forth.
+
+It's even included some tables. And if I scroll all the way down, we can actually see it's actually researched 78 websites to compile and synthesize this information. So I think this is a great starting point to sort of overlay some additional information and actually start to work with it in notebook LLM.
+
+The other really nice thing here is you can actually open this into a Google doc and it will actually just save the report for you. So we're going to 
+
+go ahead and click over here. And this is the full research report that it just put together for us, which in and of itself is really powerful in terms of being able to share this and socialize this with your team or whoever you may be having to [00:04:00] report this back up to.
+
+But so we're going to leave that there for now, and we will come back to that. And one of the other things I want to do is hop over to YouTube and we're actually gonna try to find some videos on someone, you know, successfully buying an accounting firm. I like Ben Kelly.
+
+He's from Acquisition Ace and they talk a lot about people buying businesses. I find it incredibly fascinating and uh, we'll just kind of scan through here. This one looks pretty interesting. This guy bought a 2 million accounting firm. So let's go ahead and grab this link. 
+
+And what we're actually going to do is hop over to Notebook LM. And so this is what it's going to look like. And what's really cool about this particular product is you're able to sort of curate the sources that you want to be synthesizing information from. Um, and you sort of know that of all the contents it has, the things that you're looking for, but you can actually extract those in a really useful way and really narrowly focus the outputs and the answers that you're trying to get resolved.
+
+And the first thing you'll notice here is you can actually [00:05:00] connect many data sources. Uh, it actually says the source limit here is 300, so you can insert up to 300 sources and you can do things like Google Docs, you could do a website, you could do YouTube, you can do. Uh, pasted in text. And so the first thing we're gonna do is we'll drop in that YouTube link to actually pull in that information.
+
+And then I'm gonna go ahead and grab this Google doc link and also pull that in as well. We're gonna go ahead and click add source. We will just hit Google docs. We will drop this in here. And hit insert. And essentially what this is doing is sort of like your own rag in terms of building out a database that you can then access information from through an LLM and actually ask it questions, have it summarize all of the information for you.
+
+So what we're actually going to do here is, uh, ask it some questions and have it give us some insights.
+
+We're just going to say leveraging the two sources provide a summary of how to go through the process of buying an accounting firm, how to value it and [00:06:00] key considerations and let's see what it comes back with.
+
+So here we have its report and so it's actually pulled everything out. It's a little different in terms of the formatting. It's kind of more of a bulleted type style. What's also really nice is it actually will give you the citations for everything that it's referencing. If you want to sort of double click into that particular topic and try to understand that better. 
+
+One of the first things that starting out with, which would be probably one of the first obvious questions, like, how do you value this thing? How much would you actually be willing to pay? And so it's starting to talk about multiples of gross revenue, multiples of cashflow, and a number of different other approaches that you could start with in terms of boxing in the valuation of the business. 
+
+it looks like a lot of this is being drawn from the research that, Gemini did for us on this. And then it's starting to get into things like case studies and other considerations. And then down below here, you can actually see, it's starting to reference, the actual YouTube video and talks about things around remote management, seller relationship, [00:07:00] operational improvements, pricing strategy, so on and so forth.
+
+And so if there's any particular questions here, we can actually start to double click into it. And I might ask a question around, you know, how much did he pay to buy his business as a data point in terms of context?
+
+So we're going to say how much did Zach Jensen buy his business for and what were the financial metrics as a reference point. And so it looks like they bought the firm for around 2 million. The firm had 1. 2 in earnings before interest, so that's its EBITDA, had 6, 000 clients. the business had 1. 8 in revenue.
+
+So it looks like he paid a little over 1x for this maybe like 1. 2 roughly. And then it looks like, yeah, he was taking a salary. He was paying the seller as a part of it. And then he had debt service on top of that with his SBA loan. And then here's his overall net profits. 
+
+And this is what he put into the [00:08:00] deal to buy it. So essentially this guy bought a 2 million business for 250 grand. That's pretty awesome. And so you can actually then start to fact check this against some of the other things that you'd be seeing from the research that's conducted. And, uh, you know, here's a good example.
+
+Generally you're paying between, half to 1. 5 and it looks like he's well within that ballpark. So just leveraging a tool like this can actually start to give you directional indicators of what to focus on. And without having ever bought a business like this myself, it starts to give me sort of the boundaries of what's normal and what's reasonable, and even start to lead to what questions should I be asking when going through the due diligence process or talking to potential sellers?
+
+Or how do I know when they're asking for too much money that doesn't make any sense? So I think this is just a fun little example as, uh, you know, it scratches my curiosity and in the prospect of buying a business. But fundamentally here, what I wanted to highlight is [00:09:00] the power of these tools and the new things that Google's coming out with, whether it's Gemini or it's Notebook LM, and how you might be able to use them in a particular use case.
+
+For the most part, I think these are free. I think Gemini Deep Research might be 20 a month. Very inexpensive for the value that they provide. And for sure, these are the types of tools you should be playing with and experimenting with.
+
+In order to improve your workflow, your output or just even how you're preparing yourself with the knowledge you need to do the work that you're doing.
+
+So hopefully that was a helpful demo until next time.
+

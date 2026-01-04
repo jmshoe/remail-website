@@ -14,6 +14,7 @@ export interface BlogPost {
   authorRole?: string
   tags: string[]
   image?: string
+  imageAlt?: string
   readingTime: string
   content: string
 }
@@ -27,6 +28,7 @@ export interface BlogPostMeta {
   authorRole?: string
   tags: string[]
   image?: string
+  imageAlt?: string
   readingTime: string
 }
 
@@ -55,6 +57,7 @@ export function getBlogPosts(): BlogPostMeta[] {
       authorRole: data.authorRole,
       tags: data.tags || [],
       image: data.image,
+      imageAlt: data.imageAlt || data.title,
       readingTime: stats.text,
     }
   })
@@ -84,6 +87,7 @@ export function getBlogPost(slug: string): BlogPost | null {
     authorRole: data.authorRole,
     tags: data.tags || [],
     image: data.image,
+    imageAlt: data.imageAlt || data.title,
     readingTime: stats.text,
     content,
   }

@@ -18,7 +18,7 @@ const contactSchema = z.object({
   phone: z.string().optional(),
   company: z.string().optional(),
   investorType: z.enum(['wholesaler', 'flipper', 'buy-and-hold', 'agent', 'other']).optional(),
-  monthlyVolume: z.enum(['under-500', '500-2000', '2000-5000', 'over-5000']).optional(),
+  monthlyVolume: z.enum(['under-10000', '10000-25000', '25000-50000', 'over-50000']).optional(),
   message: z.string().min(10, 'Message must be at least 10 characters'),
 })
 
@@ -160,7 +160,7 @@ export function ContactForm({ variant = 'full', source = 'contact-page' }: Conta
           <Input
             id="phone"
             type="tel"
-            placeholder="(555) 123-4567"
+            placeholder="(980) 277-7437"
             {...register('phone')}
           />
         </div>
@@ -203,10 +203,10 @@ export function ContactForm({ variant = 'full', source = 'contact-page' }: Conta
                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
                 <option value="">Select one...</option>
-                <option value="under-500">Under 500 pieces</option>
-                <option value="500-2000">500 - 2,000 pieces</option>
-                <option value="2000-5000">2,000 - 5,000 pieces</option>
-                <option value="over-5000">Over 5,000 pieces</option>
+                <option value="under-10000">Under 10,000</option>
+                <option value="10000-25000">10,000-25,000</option>
+                <option value="25000-50000">25,000-50,000</option>
+                <option value="over-50000">50,000+</option>
               </select>
             </div>
           </>

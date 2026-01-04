@@ -77,9 +77,9 @@ export function OurApproach() {
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {[
               { value: '20M+', label: 'Mailers Sent' },
-              { value: '4.2%', label: 'Avg Response Rate' },
+              { value: '1.2%', label: 'Avg Response Rate' },
               { value: '5.2x', label: 'Avg ROAS' },
-              { value: '500+', label: 'Happy Investors' },
+              { value: 'Proven', label: 'Templates' },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <p className="text-3xl font-bold text-white md:text-4xl">{stat.value}</p>

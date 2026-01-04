@@ -131,3 +131,12 @@ html {
     transform: translateY(0);
   }
 }
+
+/* Vapi Chat Widget Icon Styling */
+/* Change the built-in SVG icon from blue to white for visibility on blue button */
+
+#vapi-widget-container svg rect,
+#vapi-widget-container svg circle {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}

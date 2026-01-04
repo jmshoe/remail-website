@@ -70,8 +70,8 @@ export async function sendContactNotification(data: ContactNotificationData) {
     }
 
     await client.emails.send({
-      from: 'REmail Notifications <notifications@remail.com>',
-      to: process.env.CONTACT_NOTIFICATION_EMAIL || 'sales@remail.com',
+      from: 'REmail Notifications <notifications@remaildirect.com>',
+      to: process.env.CONTACT_NOTIFICATION_EMAIL || 'sales@remaildirect.com',
       reply_to: email,
       subject: `New Lead: ${name}${company ? ` from ${company}` : ''}`,
       html: htmlContent,
@@ -92,7 +92,7 @@ export async function sendContactConfirmation(data: { name: string; email: strin
     }
 
     await client.emails.send({
-      from: 'REmail <hello@remail.com>',
+      from: 'REmail <support@remaildirect.com>',
       to: data.email,
       subject: "Thanks for reaching out! We'll be in touch soon.",
       html: `
@@ -100,8 +100,8 @@ export async function sendContactConfirmation(data: { name: string; email: strin
         <p>Thanks for contacting REmail! We've received your message and our team will get back to you within 24 hours.</p>
         <p>In the meantime, here are some resources you might find helpful:</p>
         <ul>
-          <li><a href="https://remail.com/blog">Direct Mail Marketing Tips</a></li>
-          <li><a href="https://remail.com/pricing">Our Pricing Plans</a></li>
+          <li><a href="https://remaildirect.com/blog">Direct Mail Marketing Tips</a></li>
+          <li><a href="https://remaildirect.com/pricing">Our Pricing Plans</a></li>
         </ul>
         <p>Best regards,<br>The REmail Team</p>
       `,

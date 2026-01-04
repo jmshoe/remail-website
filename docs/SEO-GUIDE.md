@@ -87,8 +87,8 @@ H1: One per page, contains primary keyword
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "REmail",
-  "url": "https://remail.com",
-  "logo": "https://remail.com/logo.png",
+  "url": "https://remaildirect.com",
+  "logo": "https://remaildirect.com/logo.png",
   "sameAs": [
     "https://twitter.com/remail",
     "https://linkedin.com/company/remail"
@@ -156,7 +156,7 @@ H1: One per page, contains primary keyword
 User-agent: *
 Allow: /
 
-Sitemap: https://remail.com/sitemap.xml
+Sitemap: https://remaildirect.com/sitemap.xml
 
 # Block admin and API routes
 Disallow: /api/

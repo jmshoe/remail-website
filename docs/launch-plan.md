@@ -70,7 +70,7 @@ Implemented:
 
 ### 2) Canonicals + metadata base
 The root metadata already uses:
-- `metadataBase: NEXT_PUBLIC_APP_URL || https://remail.com`
+- `metadataBase: NEXT_PUBLIC_APP_URL || https://remaildirect.com`
 
 Ensure on Vercel:
 - `NEXT_PUBLIC_APP_URL` is correct in **Preview/Staging/Prod**, otherwise canonicals/OG URLs can be wrong.
@@ -199,6 +199,28 @@ Typical setup:
 
 ---
 
+## AI Chat Widget (Vapi) ✅ IMPLEMENTED
+
+An AI-powered chat widget provides 24/7 visitor support.
+
+### Implementation status:
+- **Component**: `src/components/chat/VapiWidget.tsx` ✅
+- **Documentation**: `docs/VAPI-CHAT.md` ✅
+- **Branding**: Styled with REmail colors (#2563EB blue) ✅
+- **Mode**: Text chat (with voice option available) ✅
+
+### Production setup:
+1. Ensure `NEXT_PUBLIC_VAPI_PUBLIC_KEY` is set in Vercel environment variables
+2. Verify assistant is active in Vapi dashboard (https://dashboard.vapi.ai)
+3. Test chat functionality on staging before production
+
+### Optional enhancements:
+- Train assistant with REmail-specific knowledge
+- Add conversation analytics/logging
+- Integrate with CRM for lead capture from chat
+
+---
+
 ## Final "go live" runbook (suggested order)
 
 1. ~~Add CI workflow + required checks~~ ✅ **DONE** - `.github/workflows/ci.yml` created
@@ -210,10 +232,11 @@ Typical setup:
    - Rate limiting: IP-based (`src/lib/rate-limit.ts`)
    - Attribution: UTM/referrer capture (`src/hooks/useAttribution.ts`)
    - ⚠️ Optional: Add CAPTCHA (Turnstile/reCAPTCHA) for additional spam protection
-5. Create GSC property and verify (manual)
-6. Connect domain in Vercel and schedule cutover window (manual)
-7. Cutover DNS (manual)
-8. Post-launch verification (indexing + tracking + lead delivery)
+5. ~~Configure AI chat widget~~ ✅ **DONE** - Vapi widget with branding
+6. Create GSC property and verify (manual)
+7. Connect domain in Vercel and schedule cutover window (manual)
+8. Cutover DNS (manual)
+9. Post-launch verification (indexing + tracking + lead delivery + chat widget)
 
 ---
 

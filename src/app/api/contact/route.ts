@@ -22,16 +22,8 @@ const contactSchema = z.object({
   landingPage: z.string().optional(),
 })
 
-// n8n webhook endpoints
-const N8N_WEBHOOK_URLS = {
-  test: 'https://n8n-ijvn.onrender.com/webhook-test/18191fbf-498a-4719-b52f-b186ea5b99a5',
-  production: 'https://n8n-ijvn.onrender.com/webhook/18191fbf-498a-4719-b52f-b186ea5b99a5',
-}
-
-function getWebhookUrl(): string {
-  const isDevelopment = process.env.NODE_ENV === 'development'
-  return isDevelopment ? N8N_WEBHOOK_URLS.test : N8N_WEBHOOK_URLS.production
-}
+// n8n webhook URL from environment
+const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL
 
 export async function POST(request: NextRequest) {
   try {
@@ -71,8 +63,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Forward to n8n webhook
-    const webhookUrl = getWebhookUrl()
-    const webhookResponse = await fetch(webhookUrl, {
+    if (!N8N_WEBHOOK_URL) {
+      console.error('N8N_WEBHOOK_URL environment variable is not set')
+      throw new Error('Webhook configuration error')
+    }
+    const webhookResponse = await fetch(N8N_WEBHOOK_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -111,7 +106,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        message: 'Something went wrong. Please try again or email us directly at hello@remail.com',
+        message: 'Something went wrong. Please try again or email us directly at support@remaildirect.com',
       },
       { status: 500 }
     )

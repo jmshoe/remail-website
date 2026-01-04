@@ -23,9 +23,8 @@ export function CTA() {
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button
               size="lg"
-              variant="secondary"
               asChild
-              className="w-full gap-2 bg-white text-primary hover:bg-blue-50 sm:w-auto"
+              className="w-full gap-2 bg-white text-primary hover:bg-blue-50 shadow-lg sm:w-auto"
             >
               <Link href="/contact">
                 <FileText className="h-4 w-4" />
@@ -36,7 +35,7 @@ export function CTA() {
               size="lg"
               variant="outline"
               asChild
-              className="w-full gap-2 border-white/30 bg-transparent text-white hover:bg-white/10 sm:w-auto"
+              className="w-full gap-2 border-2 border-white/50 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white sm:w-auto"
             >
               <Link href="/contact">
                 Schedule Strategy Session
@@ -47,18 +46,18 @@ export function CTA() {
 
           <div className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
             <a
-              href="mailto:hello@remail.com"
+              href="mailto:support@remaildirect.com"
               className="flex items-center gap-2 text-sm text-blue-100 hover:text-white transition-colors"
             >
               <Mail className="h-4 w-4" />
-              hello@remail.com
+              support@remaildirect.com
             </a>
             <a
-              href="tel:+15551234567"
+              href="tel:+19802777437"
               className="flex items-center gap-2 text-sm text-blue-100 hover:text-white transition-colors"
             >
               <Phone className="h-4 w-4" />
-              (555) 123-4567
+              (980) 277-7437
             </a>
           </div>
 

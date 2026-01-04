@@ -3,9 +3,6 @@ const nextConfig = {
   // Enable React strict mode for better development experience
   reactStrictMode: true,
 
-  // Disable static 404/500 page generation which conflicts with App Router
-  output: 'standalone',
-
   // Image optimization
   images: {
     remotePatterns: [
@@ -20,13 +17,25 @@ const nextConfig = {
     ],
   },
 
-  // Redirect www to non-www
+  // Domain redirects
   async redirects() {
     return [
       {
         source: '/:path*',
+        has: [{ type: 'host', value: 'www.remaildirect.com' }],
+        destination: 'https://remaildirect.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'remail.com' }],
+        destination: 'https://remaildirect.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
         has: [{ type: 'host', value: 'www.remail.com' }],
-        destination: 'https://remail.com/:path*',
+        destination: 'https://remaildirect.com/:path*',
         permanent: true,
       },
     ]

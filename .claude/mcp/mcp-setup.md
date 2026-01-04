@@ -78,6 +78,33 @@ If you see 401 errors with MCP:
 
 ---
 
+## Fire Crawl MCP (Web Scraping & Research)
+
+Fire Crawl MCP provides web scraping, crawling, and content extraction capabilities.
+
+### Setup
+
+1. **Get API Key**: Visit [Fire Crawl API Keys](https://firecrawl.dev/app/api-keys)
+
+2. **Add MCP Server**:
+```bash
+claude mcp add firecrawl -e FIRECRAWL_API_KEY=your-api-key -- npx -y firecrawl-mcp
+```
+
+3. **Verify**:
+```bash
+claude mcp list
+```
+
+**Full documentation**: See `.claude/mcp/firecrawl-mcp-setup.md`
+
+### Use Cases
+- Scrape competitor websites for SEO research
+- Extract content and pricing information
+- Crawl sites to map structure
+- Deep research on topics
+- Extract structured data from web pages
+
 ## Other SEO MCPs (Optional)
 
 ### SEMrush

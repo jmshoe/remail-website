@@ -17,6 +17,7 @@ REmail is a direct mail automation platform designed specifically for real estat
 - **Payments**: Stripe
 - **Email Service**: Resend or SendGrid
 - **Direct Mail API**: Lob or Click2Mail
+- **Chat Widget**: Vapi AI (see `docs/VAPI-CHAT.md`)
 - **Analytics**: Google Analytics 4, Plausible
 - **Hosting**: Vercel
 
@@ -34,6 +35,7 @@ REmail is a direct mail automation platform designed specifically for real estat
 │   │   ├── ui/                 # Reusable UI components
 │   │   ├── forms/              # Form components
 │   │   ├── marketing/          # Marketing-specific components
+│   │   ├── chat/               # Chat widget (Vapi AI)
 │   │   └── dashboard/          # Dashboard components
 │   ├── lib/                    # Utility functions and configurations
 │   ├── hooks/                  # Custom React hooks
@@ -121,6 +123,8 @@ Required environment variables (see `.env.example`):
 - `STRIPE_SECRET_KEY` - Stripe API key
 - `LOB_API_KEY` - Lob direct mail API key
 - `RESEND_API_KEY` - Email service API key
+- `NEXT_PUBLIC_VAPI_PUBLIC_KEY` - Vapi public API key (for chat widget)
+- `FIRECRAWL_API_KEY` - Fire Crawl API key (for MCP web scraping - optional)
 
 ## Code Standards
 
@@ -131,6 +135,34 @@ Required environment variables (see `.env.example`):
 - Follow semantic HTML for accessibility
 - Mobile-first responsive design
 - Lazy load below-fold content
+
+## Workflow Preferences
+
+### Previewing Work
+**IMPORTANT**: When completing work on pages or components, ALWAYS automatically start the dev server and open the browser to preview:
+
+```bash
+# 1. Kill any existing dev server and restart fresh
+pkill -f "next dev" 2>/dev/null
+sleep 1
+
+# 2. Start the dev server in background
+npm run dev &
+
+# 3. Wait for server to start and check output for the actual port
+sleep 5
+
+# 4. Open the page in browser (check output for correct port - may be 3001 if 3000 is in use)
+open http://localhost:<PORT>/<page-path>
+```
+
+**Rules:**
+- ALWAYS restart the dev server when previewing new/modified pages
+- ALWAYS check the dev server output for the actual port (Next.js will use 3001, 3002, etc. if 3000 is busy)
+- ALWAYS open the browser automatically with the correct port
+- Do NOT tell the user to run `npm run dev` manually
+- Do NOT just provide a URL without opening it
+- Do NOT assume port 3000 - always verify from server output
 
 ## Brand Guidelines
 
@@ -214,6 +246,79 @@ Custom utilities in `src/styles/globals.css`:
 - `.hover-lift` - Hover lift animation
 - `.animate-fade-in` - Fade in animation
 
+## Chat Widget (Vapi AI)
+
+The website includes an AI-powered chat widget for visitor support.
+
+### Quick Reference
+
+| Item | Value |
+|------|-------|
+| Component | `src/components/chat/VapiWidget.tsx` |
+| Documentation | `docs/VAPI-CHAT.md` |
+| Environment Variable | `NEXT_PUBLIC_VAPI_PUBLIC_KEY` |
+| Mode | Chat (text-based) |
+| Position | Bottom-right corner |
+
+### Configuration
+
+The widget is styled to match REmail branding:
+
+```typescript
+// Brand colors used in widget
+const BRAND = {
+  primary: '#2563EB',  // Blue accent & button
+  accent: '#10B981',   // Green (available)
+  white: '#FFFFFF',    // Button icon
+}
+```
+
+### Customization
+
+To modify the chat widget:
+
+1. **Change assistant**: Update `assistantId` in `VapiWidget.tsx`
+2. **Update branding**: Modify the `BRAND` constant and data attributes
+3. **Change labels**: Edit the `data-main-label`, `data-empty-chat-message`, etc.
+
+See `docs/VAPI-CHAT.md` for full documentation.
+
+## Voice DNA (Content Voice Matching)
+
+The project includes a Voice DNA system that analyzes your writing samples to match your unique voice when creating blog posts.
+
+### How It Works
+
+1. Add voice samples to `.claude/context/`:
+   - **Transcripts**: Podcast episodes, YouTube videos, interviews → `.claude/context/transcripts/`
+   - **Written**: Emails, LinkedIn posts, previous blog posts → `.claude/context/written/`
+
+2. When you run `/new-blog-post`:
+   - Claude reads ALL your samples
+   - Extracts voice characteristics (tone, vocabulary, sentence patterns)
+   - Writes content matching your style
+
+### Quick Start
+
+```bash
+# Add a transcript (copy from YouTube, Otter.ai, etc.)
+echo "Your transcript text..." > .claude/context/transcripts/podcast-episode-1.txt
+
+# Add written content
+echo "Your LinkedIn post or email..." > .claude/context/written/linkedin-post-1.txt
+```
+
+### Sample Guidelines
+
+| Type | Files | Words per File |
+|------|-------|----------------|
+| Transcripts | 3-5 | 500-2000 |
+| Written | 5-10 | 500-2000 |
+
+See `.claude/context/README.md` for detailed instructions.
+
+---
+
 ## Claude Code Tools
 
 This project includes custom skills, commands, and scripts for Claude Code.
@@ -226,8 +331,14 @@ This project includes custom skills, commands, and scripts for Claude Code.
 │   ├── seo-research/           # Auto-triggered SEO research skill
 │   │   ├── SKILL.md            # Skill definition with frontmatter
 │   │   └── seo-guidelines.md   # Target keywords & competitors
-│   └── frontend-design/        # Auto-triggered design skill
-│       └── SKILL.md            # Senior front-end design guidelines
+│   ├── frontend-design/        # Auto-triggered design skill
+│   │   └── SKILL.md            # Senior front-end design guidelines
+│   └── voice-dna/              # Auto-triggered voice matching skill
+│       └── SKILL.md            # Voice analysis for content creation
+├── context/                    # Voice DNA samples
+│   ├── README.md               # Guide for adding samples
+│   ├── transcripts/            # Audio/video transcripts
+│   └── written/                # Written content samples
 ├── commands/                   # Slash commands (manual triggers)
 │   ├── keyword-research.md     # /keyword-research <seed>
 │   ├── keyword-volume.md       # /keyword-volume <keywords>
@@ -249,9 +360,63 @@ This project includes custom skills, commands, and scripts for Claude Code.
 │   ├── deploy.md               # /deploy
 │   ├── performance-check.md    # /performance-check
 │   └── review-pr.md            # /review-pr
+└── mcp/                        # MCP server documentation
+    ├── mcp-setup.md            # DataForSEO MCP setup
+    ├── firecrawl-mcp-setup.md  # Fire Crawl MCP setup
+    ├── browser-mcp-setup.md    # Browser MCP setup
+    └── MCP-VERIFICATION.md     # MCP verification checklist
 scripts/
 └── dataforseo.sh               # DataForSEO API wrapper
 ```
+
+### MCP Servers
+
+This project uses Model Context Protocol (MCP) servers for enhanced capabilities:
+
+| MCP Server | Purpose | Setup |
+|------------|---------|-------|
+| **Fire Crawl** | Web scraping, crawling, content extraction | See `.claude/mcp/firecrawl-mcp-setup.md` |
+| **DataForSEO** | SEO research, keyword data, competitor analysis | See `.claude/mcp/mcp-setup.md` |
+| **NanoBanana** | AI image generation (Gemini) for blog posts | See `.claude/mcp/nanobanana-mcp-setup.md` |
+| **Playwright** | Browser automation, screenshots, web interaction | `claude mcp add playwright -- npx @playwright/mcp@latest` |
+| **Perplexity** | AI-powered web search and research | `claude mcp add perplexity -e PERPLEXITY_API_KEY=your-key -- npx -y @mseep/perplexity-mcp` |
+| **Chrome DevTools** | Chrome debugging, inspection, performance analysis | `claude mcp add chrome-devtools -- npx chrome-devtools-mcp@latest` |
+
+**Quick Setup:**
+```bash
+# Fire Crawl MCP
+claude mcp add firecrawl -e FIRECRAWL_API_KEY=your-key -- npx -y @mseep/firecrawl-mcp
+
+# NanoBanana MCP (image generation via Gemini)
+claude mcp add gemini-nanobanana-mcp -s user -e GEMINI_API_KEY=your-key -- npx -y gemini-nanobanana-mcp@latest
+
+# Playwright MCP (browser automation)
+claude mcp add playwright -- npx @playwright/mcp@latest
+
+# Chrome DevTools MCP (debugging)
+claude mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
+
+# Perplexity MCP (AI search)
+claude mcp add perplexity -e PERPLEXITY_API_KEY=your-key -- npx -y @mseep/perplexity-mcp
+
+# Verify
+claude mcp list
+```
+
+See `.claude/mcp/firecrawl-mcp-setup.md`, `.claude/mcp/nanobanana-mcp-setup.md`, and `.claude/mcp/mcp-setup.md` for detailed configuration.
+
+> **💡 Tip: Check Cursor MCP Config for Existing Keys**
+>
+> If you use Cursor IDE, you may already have MCP servers configured with API keys.
+> Claude Code should check `~/.cursor/mcp.json` for existing configurations:
+>
+> ```bash
+> # View existing Cursor MCP config
+> cat ~/.cursor/mcp.json
+> ```
+>
+> This file contains MCP server configurations with API keys that can be reused for Claude Code.
+> Common servers found in Cursor configs: `firecrawl`, `perplexity`, `dataforseo`, etc.
 
 ### Skills (Auto-Triggered)
 
@@ -261,6 +426,7 @@ Skills are automatically invoked by Claude when relevant to the conversation.
 |-------|-------------|
 | `seo-research` | Keyword research, competitor analysis, SERP data via DataForSEO API |
 | `frontend-design` | Senior front-end design skill - reads DESIGN-BRIEF.md, applies design principles |
+| `voice-dna` | Analyzes voice samples to match author's writing style for blog posts |
 
 ### Slash Commands
 

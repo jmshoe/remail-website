@@ -52,3 +52,5 @@ prisma/*.db-journal
 
 # MCP config (contains API credentials)
 .mcp.json
+.env*.local
+.playwright-mcp/

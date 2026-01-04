@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getAllBlogSlugs } from '@/lib/mdx'
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://remail.com'
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://remaildirect.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Static marketing pages
@@ -41,6 +41,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/direct-mail-roas-calculator`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/direct-mail-sample-size-calculator`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
     },
     {
       url: `${baseUrl}/blog`,
