@@ -28,12 +28,12 @@ export const faqData = [
   {
     question: 'How much does direct mail cost per piece?',
     answer:
-      'Pricing starts at $0.55 per postcard and $0.89 per letter, including printing and postage. Volume discounts are available for campaigns over 1,000 pieces. We negotiate the best rates and pass those savings to you — no hidden fees, no markups.',
+      'Pricing starts at $0.60 per postcard and $0.65 per letter, including printing and postage. Volume discounts are available for campaigns over 50,000 pieces. We negotiate the best rates and pass those savings to you — no hidden fees, no markups.',
   },
   {
     question: 'What types of mail pieces can I send?',
     answer:
-      'We support postcards (4x6 and 6x9), letters with envelopes, yellow letters, and custom formats. Our template designer lets you create professional designs or choose from our library of proven templates — all crafted to speak to your ideal seller.',
+      'We support postcards (4x6 and 6x9), check letters, snap packs, yellow letters, and select custom formats. Our template designer lets you create professional designs or choose from our library of proven templates — all crafted to speak to your ideal seller.',
   },
   {
     question: 'Can I use my own mailing list?',

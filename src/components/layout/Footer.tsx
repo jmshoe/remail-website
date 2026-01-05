@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Mail } from 'lucide-react'
+import { socialLinks } from '@/data/links'
 
 const footerNavigation = {
   solutions: [
@@ -11,7 +12,6 @@ const footerNavigation = {
   audiences: [
     { name: 'For Wholesalers', href: '/wholesalers' },
     { name: 'For Flippers', href: '/flippers' },
-    { name: 'For Agents', href: '/agents' },
   ],
   tools: [
     { name: 'ROAS Calculator', href: '/direct-mail-roas-calculator' },
@@ -48,7 +48,7 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://twitter.com/remail"
+                href={socialLinks.twitter}
                 className="text-slate-400 hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -59,7 +59,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/company/remail"
+                href={socialLinks.linkedin}
                 className="text-slate-400 hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -70,7 +70,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://youtube.com/@remail"
+                href={socialLinks.youtube}
                 className="text-slate-400 hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"

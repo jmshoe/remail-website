@@ -49,7 +49,7 @@ const benefits = [
     icon: Zap,
     title: 'Faster Than Competition',
     description:
-      '3-day delivery gets your mail in hands before other wholesalers even send theirs.',
+      '5-day delivery gets your mail in hands before other wholesalers even send theirs.',
   },
   {
     icon: TrendingUp,

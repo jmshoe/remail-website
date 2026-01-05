@@ -51,6 +51,15 @@ Based on voice analysis and SEO research:
 
 Create the blog post file at `content/blog/[slug].mdx`:
 
+**External Links (IMPORTANT):**
+Before adding any external links, read `src/data/links.ts` which is the SINGLE SOURCE OF TRUTH for:
+- Social media links (`socialLinks`)
+- Affiliate links (`affiliateLinks`)
+- External resources (`externalResources`)
+
+When mentioning tools or resources, check if they exist in `affiliateLinks` and use those URLs.
+When linking to social profiles, use `socialLinks`.
+
 **SEO Requirements:**
 - SEO-optimized title (under 60 characters)
 - Meta description (under 160 characters)

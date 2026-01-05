@@ -317,6 +317,57 @@ echo "Your LinkedIn post or email..." > .claude/context/written/linkedin-post-1.
 
 See `.claude/context/README.md` for detailed instructions.
 
+## External Links Configuration
+
+All external links (social media, affiliates, resources) are managed in a single source of truth.
+
+### Quick Reference
+
+| Item | Value |
+|------|-------|
+| Location | `src/data/links.ts` |
+| Imports | `import { socialLinks, affiliateLinks, externalResources } from '@/data/links'` |
+
+### Structure
+
+```typescript
+// Social Media
+socialLinks.twitter    // Twitter/X profile URL
+socialLinks.linkedin   // LinkedIn company page
+socialLinks.youtube    // YouTube channel
+
+// Affiliate Links (with labels and descriptions)
+affiliateLinks.propStream.url     // PropStream affiliate URL
+affiliateLinks.lob.url            // Lob affiliate URL
+// etc.
+
+// External Resources
+externalResources.usps.url        // USPS website
+externalResources.biggerPockets.url  // BiggerPockets
+```
+
+### Usage Rules
+
+1. **Components**: Import from `@/data/links` instead of hardcoding URLs
+2. **Blog Posts**: When mentioning tools/platforms, check `affiliateLinks` first
+3. **Content Generation**: `/new-blog-post` command references this file automatically
+4. **Adding New Links**: Edit `src/data/links.ts` directly
+
+### Adding New Links
+
+```typescript
+// In src/data/links.ts
+
+// Add a new affiliate
+affiliateLinks: {
+  newTool: {
+    url: 'https://newtool.com?ref=remail',
+    label: 'New Tool',
+    description: 'What this tool does',
+  },
+}
+```
+
 ---
 
 ## Claude Code Tools

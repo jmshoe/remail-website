@@ -45,10 +45,10 @@ const services = [
       'Automated postcard and letter campaigns that run on autopilot. Upload your list, choose a template, and we handle printing, addressing, and mailing.',
     features: [
       'Postcards (4x6, 6x9, 6x11)',
-      'Yellow letters',
+      'Check letters',
       'Professional letters',
       'Custom mail pieces',
-      '3-5 day delivery',
+      '5-7 day delivery',
       'USPS tracking',
     ],
     image: '/images/services/direct-mail-campaigns.jpg',

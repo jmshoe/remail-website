@@ -1,8 +1,14 @@
-import Link from 'next/link'
+'use client'
+
+import { useState } from 'react'
 import { ArrowRight, Mail, Phone, FileText } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { CalBooking } from '@/components/marketing/CalBooking'
+import { BlueprintModal } from '@/components/forms/BlueprintModal'
 
 export function CTA() {
+  const [blueprintModalOpen, setBlueprintModalOpen] = useState(false)
+
   return (
     <section className="relative overflow-hidden bg-primary py-20 lg:py-28">
       {/* Background decoration */}
@@ -23,25 +29,21 @@ export function CTA() {
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button
               size="lg"
-              asChild
               className="w-full gap-2 bg-white text-primary hover:bg-blue-50 shadow-lg sm:w-auto"
+              onClick={() => setBlueprintModalOpen(true)}
             >
-              <Link href="/contact">
-                <FileText className="h-4 w-4" />
-                Get Free 7-Figure Blueprint
-              </Link>
+              <FileText className="h-4 w-4" />
+              Get Free 7-Figure Blueprint
             </Button>
-            <Button
-              size="lg"
+            <CalBooking
+              mode="button"
               variant="outline"
-              asChild
+              size="lg"
               className="w-full gap-2 border-2 border-white/50 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white sm:w-auto"
             >
-              <Link href="/contact">
-                Schedule Strategy Session
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
+              Schedule Strategy Session
+              <ArrowRight className="h-4 w-4" />
+            </CalBooking>
           </div>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
@@ -66,6 +68,12 @@ export function CTA() {
           </p>
         </div>
       </div>
+
+      {/* Blueprint Modal */}
+      <BlueprintModal
+        open={blueprintModalOpen}
+        onOpenChange={setBlueprintModalOpen}
+      />
     </section>
   )
 }

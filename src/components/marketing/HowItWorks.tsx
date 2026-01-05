@@ -3,23 +3,23 @@ import { Upload, Palette, Send, TrendingUp } from 'lucide-react'
 const steps = [
   {
     step: '01',
-    name: 'Upload Your List',
+    name: 'Connect Your Data',
     description:
-      'Import your property owner list or use our built-in list tools to find absentee owners, pre-foreclosures, and more.',
+      'Connect your data or use our built-in list tools to find absentee owners, pre-foreclosures, and more.',
     icon: Upload,
   },
   {
     step: '02',
     name: 'Design Your Mailer',
     description:
-      'Choose from proven templates or create your own. Postcards, yellow letters, and professional letters available.',
+      'Choose from proven templates or create your own. Check letters, offer letters, postcards, and professional letters available.',
     icon: Palette,
   },
   {
     step: '03',
     name: 'Launch Campaign',
     description:
-      'Set your schedule and hit send. We print, address, and mail everything for you. 3-day delivery guaranteed.',
+      'Set your schedule and hit send. We print, address, and mail everything for you. Delivery as fast as 5-7 days.',
     icon: Send,
   },
   {
@@ -42,7 +42,7 @@ export function HowItWorks() {
             How Direct Mail Automation Works
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Get your first campaign live in under 10 minutes. No design skills required.
+            Get your first campaign live in under a week. No design skills required.
           </p>
         </div>
 

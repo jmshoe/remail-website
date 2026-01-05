@@ -29,7 +29,7 @@ const testimonials = [
     initials: 'DR',
     gradient: 'from-amber-500 to-amber-700',
     rating: 5,
-    metric: '4.8% response rate',
+    metric: '1.2% response rate',
   },
 ]
 
