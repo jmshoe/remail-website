@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
+import { GoogleTagManager, GoogleTagManagerNoScript, ConsentBanner } from '@/components/analytics'
 
 // Skip static generation for all pages
 export const dynamic = 'force-dynamic'
@@ -78,12 +79,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <GoogleTagManager />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className={`min-h-screen bg-white antialiased ${inter.className}`}>
+        <GoogleTagManagerNoScript />
         {children}
+        <ConsentBanner />
       </body>
     </html>
   )
