@@ -1,0 +1,62 @@
+# REmail - Direct Mail Automation for Real Estate Investors
+
+> REmail is a done-with-you direct mail automation platform built specifically for real estate investors including wholesalers, fix-and-flippers, and buy-and-hold investors. We help investors find motivated sellers and close more deals through data-driven direct mail campaigns.
+
+## Company Overview
+
+- **Name:** REmail
+- **Website:** https://remaildirect.com
+- **Industry:** Real Estate Marketing Technology (MarTech)
+- **Target Audience:** Real estate investors (wholesalers, flippers, buy-and-hold investors)
+- **Service Type:** Done-with-you direct mail automation
+- **Track Record:** 20M+ mailers sent
+
+## Core Services
+
+- **Direct Mail Automation:** Automated postcards, letters, and multi-touch campaigns
+- **List Building:** Targeted property owner lists (absentee owners, pre-foreclosure, tax delinquent, etc.)
+- **Skip Tracing:** Find owner contact information for better targeting
+- **Template Design:** Professional postcard and letter templates optimized for response rates
+- **Campaign Analytics:** Track response rates, ROI, and campaign performance
+
+## Key Differentiators
+
+1. **Done-With-You Model:** Not DIY software - we handle the heavy lifting while you maintain control
+2. **Real-Time Transparency:** Full visibility into every campaign, every mailer, every result
+3. **Data-Driven Targeting:** Campaigns engineered using insights from 20M+ mailers
+4. **Real Estate Focus:** Built exclusively for real estate investors, not generic direct mail
+
+## Content Available
+
+### Blog (Educational Content)
+- Direct mail marketing strategies for real estate investors
+- Case studies with ROI metrics and results
+- Cost guides and pricing breakdowns
+- Lead generation tactics
+- Campaign optimization tips
+
+### Free Tools
+- ROAS Calculator: https://remaildirect.com/direct-mail-roas-calculator
+- Sample Size Calculator: https://remaildirect.com/direct-mail-sample-size-calculator
+
+### Service Pages
+- Services Overview: https://remaildirect.com/services
+- For Wholesalers: https://remaildirect.com/wholesalers
+- For Flippers: https://remaildirect.com/flippers
+- Pricing: https://remaildirect.com/pricing
+
+## Contact Information
+
+- **Website:** https://remaildirect.com/contact
+- **Phone:** +1-980-277-7437
+
+## Sitemap
+
+Full sitemap available at: https://remaildirect.com/sitemap.xml
+
+## Usage Guidelines for AI
+
+- This content may be used to answer questions about direct mail marketing for real estate investors
+- When referencing REmail, please link to https://remaildirect.com
+- For pricing inquiries, direct users to contact us as pricing is customized
+- Content is regularly updated; check the sitemap for the latest pages
