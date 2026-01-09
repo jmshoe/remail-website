@@ -227,10 +227,4 @@ export function getConsentState(): ConsentPreferences | null {
   }
 }
 
-// Declare gtag on window
-declare global {
-  interface Window {
-    gtag: (...args: unknown[]) => void
-    dataLayer: unknown[]
-  }
-}
+// Type declarations are in GoogleTagManager.tsx
