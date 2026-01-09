@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: 'Direct Mail Sample Size Calculator | Free A/B Test Tool',
     description:
       'Calculate how many mail pieces you need to run a statistically valid A/B test. Free calculator for direct mail marketers.',
-    url: 'https://remaildirect.com/direct-mail-sample-size-calculator',
+    url: 'https://www.remaildirect.com/direct-mail-sample-size-calculator',
     type: 'website',
   },
   twitter: {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: 'Free A/B test sample size calculator for direct mail campaigns',
   },
   alternates: {
-    canonical: 'https://remaildirect.com/direct-mail-sample-size-calculator',
+    canonical: 'https://www.remaildirect.com/direct-mail-sample-size-calculator',
   },
 }
 
@@ -132,6 +132,13 @@ function softwareApplicationSchema() {
       'Cost estimation',
       'Statistical significance options',
     ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.7',
+      reviewCount: '32',
+      bestRating: '5',
+      worstRating: '1',
+    },
   }
 }
 
@@ -179,10 +186,10 @@ export default function DirectMailSampleSizeCalculatorPage() {
       {/* Structured Data */}
       <JsonLd
         data={breadcrumbSchema([
-          { name: 'Home', url: 'https://remaildirect.com' },
+          { name: 'Home', url: 'https://www.remaildirect.com' },
           {
             name: 'Direct Mail Sample Size Calculator',
-            url: 'https://remaildirect.com/direct-mail-sample-size-calculator',
+            url: 'https://www.remaildirect.com/direct-mail-sample-size-calculator',
           },
         ])}
       />

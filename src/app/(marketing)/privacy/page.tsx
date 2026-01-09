@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Privacy Policy | REmail',
     description: 'REmail Privacy Policy - Learn how we collect, use, and protect your personal information.',
-    url: 'https://remaildirect.com/privacy',
+    url: 'https://www.remaildirect.com/privacy',
   },
   alternates: {
-    canonical: 'https://remaildirect.com/privacy',
+    canonical: 'https://www.remaildirect.com/privacy',
   },
 }
 
@@ -20,8 +20,8 @@ export default function PrivacyPage() {
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: 'Home', url: 'https://remaildirect.com' },
-          { name: 'Privacy Policy', url: 'https://remaildirect.com/privacy' },
+          { name: 'Home', url: 'https://www.remaildirect.com' },
+          { name: 'Privacy Policy', url: 'https://www.remaildirect.com/privacy' },
         ])}
       />
 

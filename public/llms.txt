@@ -5,7 +5,7 @@
 ## Company Overview
 
 - **Name:** REmail
-- **Website:** https://remaildirect.com
+- **Website:** https://www.remaildirect.com
 - **Industry:** Real Estate Marketing Technology (MarTech)
 - **Target Audience:** Real estate investors (wholesalers, flippers, buy-and-hold investors)
 - **Service Type:** Done-with-you direct mail automation
@@ -36,27 +36,27 @@
 - Campaign optimization tips
 
 ### Free Tools
-- ROAS Calculator: https://remaildirect.com/direct-mail-roas-calculator
-- Sample Size Calculator: https://remaildirect.com/direct-mail-sample-size-calculator
+- ROAS Calculator: https://www.remaildirect.com/direct-mail-roas-calculator
+- Sample Size Calculator: https://www.remaildirect.com/direct-mail-sample-size-calculator
 
 ### Service Pages
-- Services Overview: https://remaildirect.com/services
-- For Wholesalers: https://remaildirect.com/wholesalers
-- For Flippers: https://remaildirect.com/flippers
-- Pricing: https://remaildirect.com/pricing
+- Services Overview: https://www.remaildirect.com/services
+- For Wholesalers: https://www.remaildirect.com/wholesalers
+- For Flippers: https://www.remaildirect.com/flippers
+- Pricing: https://www.remaildirect.com/pricing
 
 ## Contact Information
 
-- **Website:** https://remaildirect.com/contact
+- **Website:** https://www.remaildirect.com/contact
 - **Phone:** +1-980-277-7437
 
 ## Sitemap
 
-Full sitemap available at: https://remaildirect.com/sitemap.xml
+Full sitemap available at: https://www.remaildirect.com/sitemap.xml
 
 ## Usage Guidelines for AI
 
 - This content may be used to answer questions about direct mail marketing for real estate investors
-- When referencing REmail, please link to https://remaildirect.com
+- When referencing REmail, please link to https://www.remaildirect.com
 - For pricing inquiries, direct users to contact us as pricing is customized
 - Content is regularly updated; check the sitemap for the latest pages

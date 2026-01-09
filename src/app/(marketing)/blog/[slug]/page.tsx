@@ -28,7 +28,7 @@ export async function generateMetadata({
   }
 
   // Build absolute image URL for OpenGraph
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://remaildirect.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.remaildirect.com'
   const imageUrl = post.image ? `${baseUrl}${post.image}` : undefined
 
   return {
@@ -85,7 +85,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   })
 
   // Build absolute image URL for JSON-LD
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://remaildirect.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.remaildirect.com'
   const schemaImageUrl = post.image ? `${baseUrl}${post.image}` : undefined
 
   // Article JSON-LD schema

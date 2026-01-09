@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { getBlogPosts, getAllTags } from '@/lib/mdx'
 import { BlogCard } from '@/components/blog'
+import { JsonLd, itemListSchema, breadcrumbSchema } from '@/components/seo/JsonLd'
+
+const BASE_URL = 'https://www.remaildirect.com'
 
 export const metadata: Metadata = {
   title: 'Blog - Direct Mail Marketing Tips for Real Estate Investors | REmail',
@@ -13,7 +16,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://remaildirect.com/blog',
+    canonical: 'https://www.remaildirect.com/blog',
   },
 }
 
@@ -23,9 +26,25 @@ export default function BlogPage() {
   const featuredPost = posts[0]
   const recentPosts = posts.slice(1)
 
+  // Prepare blog posts for ItemList schema
+  const blogListItems = posts.map((post) => ({
+    name: post.title,
+    url: `${BASE_URL}/blog/${post.slug}`,
+    description: post.description,
+    ...(post.image && { image: `${BASE_URL}${post.image}` }),
+  }))
+
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero Section */}
+    <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', url: BASE_URL },
+          { name: 'Blog', url: `${BASE_URL}/blog` },
+        ])}
+      />
+      <JsonLd data={itemListSchema(blogListItems)} />
+      <main className="min-h-screen bg-white">
+        {/* Hero Section */}
       <section className="bg-gradient-to-b from-slate-50 to-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
@@ -114,5 +133,6 @@ export default function BlogPage() {
         </div>
       </section>
     </main>
+    </>
   )
 }

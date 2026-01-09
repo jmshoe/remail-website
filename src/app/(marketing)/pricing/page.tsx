@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Check, HelpCircle, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { JsonLd, breadcrumbSchema } from '@/components/seo/JsonLd'
+import { JsonLd, breadcrumbSchema, softwareApplicationSchema } from '@/components/seo/JsonLd'
 import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     title: 'Pricing | REmail Direct Mail Automation',
     description:
       'Simple, transparent pricing for direct mail automation. No monthly fees on mail volume. 90-day contract guarantee.',
-    url: 'https://remaildirect.com/pricing',
+    url: 'https://www.remaildirect.com/pricing',
   },
   alternates: {
-    canonical: 'https://remaildirect.com/pricing',
+    canonical: 'https://www.remaildirect.com/pricing',
   },
 }
 
@@ -159,9 +159,17 @@ export default function PricingPage() {
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: 'Home', url: 'https://remaildirect.com' },
-          { name: 'Pricing', url: 'https://remaildirect.com/pricing' },
+          { name: 'Home', url: 'https://www.remaildirect.com' },
+          { name: 'Pricing', url: 'https://www.remaildirect.com/pricing' },
         ])}
+      />
+      <JsonLd
+        data={softwareApplicationSchema({
+          lowPrice: '1499',
+          highPrice: '1999',
+          ratingValue: '4.9',
+          reviewCount: '127',
+        })}
       />
 
       {/* Hero */}

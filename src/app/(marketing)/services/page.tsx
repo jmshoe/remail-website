@@ -12,27 +12,26 @@ import {
   Check,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { JsonLd, breadcrumbSchema, serviceSchema } from '@/components/seo/JsonLd'
+import { JsonLd, breadcrumbSchema, professionalServiceSchema } from '@/components/seo/JsonLd'
 
 export const metadata: Metadata = {
   title: 'Direct Mail Automation Services | REmail',
   description:
-    'Complete direct mail automation for real estate investors. Campaign management, skip tracing, list building, template design, analytics, and drip campaigns. Start your free trial.',
+    'Complete direct mail automation for real estate investors. Campaign management, list building, template design, analytics, and drip campaigns. Skip tracing integration available.',
   keywords: [
     'direct mail services',
     'direct mail automation',
     'real estate mail services',
-    'skip tracing service',
     'direct mail campaign management',
   ],
   openGraph: {
     title: 'Direct Mail Automation Services | REmail',
     description:
-      'Complete direct mail automation for real estate investors. Campaign management, skip tracing, and more.',
-    url: 'https://remaildirect.com/services',
+      'Complete direct mail automation for real estate investors. Campaign management, list building, and more.',
+    url: 'https://www.remaildirect.com/services',
   },
   alternates: {
-    canonical: 'https://remaildirect.com/services',
+    canonical: 'https://www.remaildirect.com/services',
   },
 }
 
@@ -53,23 +52,6 @@ const services = [
     ],
     image: '/images/services/direct-mail-campaigns.jpg',
     imageAlt: 'Clean postcards and letters on a modern workspace, showcasing direct mail automation',
-  },
-  {
-    id: 'skip-tracing',
-    icon: Search,
-    name: 'Skip Tracing',
-    description:
-      'Find property owner contact information instantly. Get phone numbers, emails, and verified mailing addresses for your target properties.',
-    features: [
-      'Phone numbers (mobile & landline)',
-      'Email addresses',
-      'Verified mailing addresses',
-      'Batch processing',
-      'Real-time lookups',
-      'High match rates',
-    ],
-    image: '/images/services/skip-tracing.jpg',
-    imageAlt: 'Modern data visualization dashboard with search interface, representing skip tracing technology',
   },
   {
     id: 'lists',
@@ -141,6 +123,25 @@ const services = [
     image: '/images/services/drip-campaigns.jpg',
     imageAlt: 'Workflow visualization showing automated campaign sequences and timelines',
   },
+  {
+    id: 'skip-tracing',
+    icon: Search,
+    name: 'Skip Tracing Integration',
+    description:
+      'Access to skip tracing APIs from trusted third-party providers. Connect with data services to find property owner contact information for your campaigns.',
+    features: [
+      'API integrations with trusted providers',
+      'Phone numbers (mobile & landline)',
+      'Email addresses',
+      'Verified mailing addresses',
+      'Batch processing',
+      'Seamless workflow integration',
+    ],
+    image: '/images/services/skip-tracing.jpg',
+    imageAlt: 'Modern data visualization dashboard with search interface, representing skip tracing technology',
+    disclaimer:
+      'Skip tracing services provided by third-party data providers. Users must comply with all applicable laws including TCPA, DNC, and state regulations. Data accuracy is not guaranteed.',
+  },
 ]
 
 export default function ServicesPage() {
@@ -148,15 +149,16 @@ export default function ServicesPage() {
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: 'Home', url: 'https://remaildirect.com' },
-          { name: 'Services', url: 'https://remaildirect.com/services' },
+          { name: 'Home', url: 'https://www.remaildirect.com' },
+          { name: 'Services', url: 'https://www.remaildirect.com/services' },
         ])}
       />
       <JsonLd
-        data={serviceSchema({
-          name: 'Direct Mail Automation',
-          description:
-            'Complete direct mail automation platform for real estate investors including campaign management, skip tracing, list building, and analytics.',
+        data={professionalServiceSchema({
+          services: services.map((s) => ({
+            name: s.name,
+            description: s.description,
+          })),
         })}
       />
 
@@ -214,6 +216,13 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
+                  {service.disclaimer && (
+                    <div className="mt-6 rounded-lg border border-amber-200 bg-amber-50 p-4">
+                      <p className="text-sm text-amber-800">
+                        <strong>Note:</strong> {service.disclaimer}
+                      </p>
+                    </div>
+                  )}
                   <Button asChild className="mt-8 gap-2">
                     <Link href="/contact">
                       Learn More

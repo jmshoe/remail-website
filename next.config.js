@@ -17,25 +17,27 @@ const nextConfig = {
     ],
   },
 
-  // Domain redirects
+  // Domain redirects - redirect all non-www to www (canonical domain)
   async redirects() {
     return [
+      // Redirect non-www to www (canonical)
       {
         source: '/:path*',
-        has: [{ type: 'host', value: 'www.remaildirect.com' }],
-        destination: 'https://remaildirect.com/:path*',
+        has: [{ type: 'host', value: 'remaildirect.com' }],
+        destination: 'https://www.remaildirect.com/:path*',
         permanent: true,
       },
+      // Redirect alternate domains to canonical www domain
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'remail.com' }],
-        destination: 'https://remaildirect.com/:path*',
+        destination: 'https://www.remaildirect.com/:path*',
         permanent: true,
       },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.remail.com' }],
-        destination: 'https://remaildirect.com/:path*',
+        destination: 'https://www.remaildirect.com/:path*',
         permanent: true,
       },
     ]

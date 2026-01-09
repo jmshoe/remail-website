@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     title: 'Direct Mail for Wholesalers | Find Motivated Sellers | REmail',
     description:
       'Direct mail automation built for real estate wholesalers. Find motivated sellers and close more deals.',
-    url: 'https://remaildirect.com/wholesalers',
+    url: 'https://www.remaildirect.com/wholesalers',
   },
   alternates: {
-    canonical: 'https://remaildirect.com/wholesalers',
+    canonical: 'https://www.remaildirect.com/wholesalers',
   },
 }
 
@@ -91,8 +91,8 @@ export default function WholesalersPage() {
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: 'Home', url: 'https://remaildirect.com' },
-          { name: 'For Wholesalers', url: 'https://remaildirect.com/wholesalers' },
+          { name: 'Home', url: 'https://www.remaildirect.com' },
+          { name: 'For Wholesalers', url: 'https://www.remaildirect.com/wholesalers' },
         ])}
       />
 

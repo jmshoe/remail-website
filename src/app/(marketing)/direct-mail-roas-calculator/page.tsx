@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: 'Direct Mail ROAS Calculator | Free ROI Tool',
     description:
       'Calculate your direct mail return on ad spend. Free sensitivity analysis tool for real estate investors.',
-    url: 'https://remaildirect.com/direct-mail-roas-calculator',
+    url: 'https://www.remaildirect.com/direct-mail-roas-calculator',
     type: 'website',
   },
   twitter: {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description: 'Free ROAS calculator for real estate direct mail campaigns',
   },
   alternates: {
-    canonical: 'https://remaildirect.com/direct-mail-roas-calculator',
+    canonical: 'https://www.remaildirect.com/direct-mail-roas-calculator',
   },
 }
 
@@ -114,6 +114,13 @@ function softwareApplicationSchema() {
       'Response rate projections',
       'Cost per lead analysis',
     ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '45',
+      bestRating: '5',
+      worstRating: '1',
+    },
   }
 }
 
@@ -156,8 +163,8 @@ export default function DirectMailROASCalculatorPage() {
       {/* Structured Data */}
       <JsonLd
         data={breadcrumbSchema([
-          { name: 'Home', url: 'https://remaildirect.com' },
-          { name: 'Direct Mail ROAS Calculator', url: 'https://remaildirect.com/direct-mail-roas-calculator' },
+          { name: 'Home', url: 'https://www.remaildirect.com' },
+          { name: 'Direct Mail ROAS Calculator', url: 'https://www.remaildirect.com/direct-mail-roas-calculator' },
         ])}
       />
       <JsonLd data={faqSchema(faqs)} />

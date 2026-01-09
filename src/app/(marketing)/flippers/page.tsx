@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     title: 'Direct Mail for House Flippers | Find Off-Market Deals | REmail',
     description:
       'Direct mail automation for fix and flip investors. Find distressed properties and source more deals.',
-    url: 'https://remaildirect.com/flippers',
+    url: 'https://www.remaildirect.com/flippers',
   },
   alternates: {
-    canonical: 'https://remaildirect.com/flippers',
+    canonical: 'https://www.remaildirect.com/flippers',
   },
 }
 
@@ -89,8 +89,8 @@ export default function FlippersPage() {
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: 'Home', url: 'https://remaildirect.com' },
-          { name: 'For Flippers', url: 'https://remaildirect.com/flippers' },
+          { name: 'Home', url: 'https://www.remaildirect.com' },
+          { name: 'For Flippers', url: 'https://www.remaildirect.com/flippers' },
         ])}
       />
 

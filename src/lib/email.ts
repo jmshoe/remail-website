@@ -100,8 +100,8 @@ export async function sendContactConfirmation(data: { name: string; email: strin
         <p>Thanks for contacting REmail! We've received your message and our team will get back to you within 24 hours.</p>
         <p>In the meantime, here are some resources you might find helpful:</p>
         <ul>
-          <li><a href="https://remaildirect.com/blog">Direct Mail Marketing Tips</a></li>
-          <li><a href="https://remaildirect.com/pricing">Our Pricing Plans</a></li>
+          <li><a href="https://www.remaildirect.com/blog">Direct Mail Marketing Tips</a></li>
+          <li><a href="https://www.remaildirect.com/pricing">Our Pricing Plans</a></li>
         </ul>
         <p>Best regards,<br>The REmail Team</p>
       `,

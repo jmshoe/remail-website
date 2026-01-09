@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     title: 'Contact Us | REmail Direct Mail Automation',
     description:
       'Get in touch with the REmail team. Questions about direct mail automation for real estate?',
-    url: 'https://remaildirect.com/contact',
+    url: 'https://www.remaildirect.com/contact',
   },
   alternates: {
-    canonical: 'https://remaildirect.com/contact',
+    canonical: 'https://www.remaildirect.com/contact',
   },
 }
 
@@ -51,8 +51,8 @@ export default function ContactPage() {
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: 'Home', url: 'https://remaildirect.com' },
-          { name: 'Contact', url: 'https://remaildirect.com/contact' },
+          { name: 'Home', url: 'https://www.remaildirect.com' },
+          { name: 'Contact', url: 'https://www.remaildirect.com/contact' },
         ])}
       />
 

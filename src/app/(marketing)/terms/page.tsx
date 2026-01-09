@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Terms of Service | REmail',
     description: 'REmail Terms of Service - Read our terms and conditions for using our website and services.',
-    url: 'https://remaildirect.com/terms',
+    url: 'https://www.remaildirect.com/terms',
   },
   alternates: {
-    canonical: 'https://remaildirect.com/terms',
+    canonical: 'https://www.remaildirect.com/terms',
   },
 }
 
@@ -20,8 +20,8 @@ export default function TermsPage() {
     <>
       <JsonLd
         data={breadcrumbSchema([
-          { name: 'Home', url: 'https://remaildirect.com' },
-          { name: 'Terms of Service', url: 'https://remaildirect.com/terms' },
+          { name: 'Home', url: 'https://www.remaildirect.com' },
+          { name: 'Terms of Service', url: 'https://www.remaildirect.com/terms' },
         ])}
       />
 
@@ -33,7 +33,7 @@ export default function TermsPage() {
               Terms of Service
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Effective Date: January 4, 2026
+              Effective Date: January 9, 2026
             </p>
           </div>
         </section>
@@ -146,7 +146,96 @@ export default function TermsPage() {
                 located in North Carolina, and you consent to their jurisdiction and venue.
               </p>
 
-              <h2>10. Miscellaneous</h2>
+              <h2>10. 90-Day Contract Guarantee</h2>
+              <p>
+                REmail offers a 90-Day Contract Guarantee for eligible customers. If you do not secure a contract
+                within your first 90 days, you may request a refund of qualifying fees, subject to the following
+                terms:
+              </p>
+
+              <h3>10.1 Definitions</h3>
+              <p>
+                For purposes of this guarantee, a &quot;<strong>Contract</strong>&quot; means a fully executed,
+                legally binding purchase agreement or assignment contract for the acquisition of real property.
+                Verbal agreements, letters of intent, pending offers, or contracts that fall through after
+                execution do not qualify.
+              </p>
+
+              <h3>10.2 Eligibility Requirements</h3>
+              <p>To qualify for this guarantee, you must meet <strong>all</strong> of the following conditions:</p>
+              <ul>
+                <li>
+                  <strong>Minimum Volume:</strong> Send a minimum of 10,000 mail pieces per month (30,000 total)
+                  through REmail during the 90-day guarantee period
+                </li>
+                <li>
+                  <strong>Targeting Compliance:</strong> Use REmail&apos;s recommended targeting criteria and
+                  approved mailing lists
+                </li>
+                <li>
+                  <strong>Lead Response:</strong> Respond to all inbound leads generated from your campaigns
+                  within 24 hours of receipt
+                </li>
+                <li>
+                  <strong>Account in Good Standing:</strong> Maintain an active account with no outstanding
+                  balances or payment disputes
+                </li>
+              </ul>
+
+              <h3>10.3 Refund Scope</h3>
+              <p>
+                If eligible, you may receive a refund of <strong>service and management fees</strong> paid during
+                the guarantee period. The following costs are <strong>not refundable</strong> as they are
+                pass-through expenses paid to third-party vendors:
+              </p>
+              <ul>
+                <li>Printing and production costs</li>
+                <li>Postage and mailing costs</li>
+                <li>Skip tracing fees</li>
+                <li>List acquisition costs</li>
+                <li>Any third-party data or service fees</li>
+              </ul>
+
+              <h3>10.4 Guarantee Period</h3>
+              <p>
+                The 90-day guarantee period begins on the <strong>drop date of your first mail piece</strong>
+                and ends exactly 90 calendar days thereafter.
+              </p>
+
+              <h3>10.5 Claim Process</h3>
+              <p>To request a refund under this guarantee:</p>
+              <ul>
+                <li>
+                  Submit a written request to{' '}
+                  <a href="mailto:support@remaildirect.com" className="text-primary hover:underline">
+                    support@remaildirect.com
+                  </a>{' '}
+                  within <strong>14 days</strong> after your 90-day period ends
+                </li>
+                <li>Include your account details and campaign information</li>
+                <li>Confirm in writing that no Contracts (as defined above) were secured during the period</li>
+              </ul>
+              <p>
+                Requests submitted more than 14 days after the guarantee period ends will not be honored.
+                REmail reserves the right to verify eligibility and may request documentation of lead
+                response times and campaign compliance.
+              </p>
+
+              <h3>10.6 Limitations</h3>
+              <ul>
+                <li>This guarantee is available <strong>once per customer</strong></li>
+                <li>
+                  Customers who have previously received a refund under this or any similar guarantee are
+                  not eligible
+                </li>
+                <li>Accounts terminated for cause or violation of these Terms are not eligible</li>
+                <li>
+                  REmail reserves the right to modify or discontinue this guarantee at any time; changes
+                  will not affect customers already within an active guarantee period
+                </li>
+              </ul>
+
+              <h2>11. Miscellaneous</h2>
               <p>
                 If any part of these Terms is found unenforceable, the rest remains in effect. Our failure to enforce a
                 provision is not a waiver. You may not assign these Terms without our consent; we may assign them as part
@@ -155,7 +244,7 @@ export default function TermsPage() {
 
               <div className="not-prose my-12 border-t border-slate-200 pt-8">
                 <p className="text-sm text-muted-foreground">
-                  Last updated: January 4, 2026
+                  Last updated: January 9, 2026
                 </p>
               </div>
             </div>
