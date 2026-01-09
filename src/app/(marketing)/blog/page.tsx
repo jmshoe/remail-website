@@ -12,6 +12,9 @@ export const metadata: Metadata = {
       'Expert guides, strategies, and tips for real estate direct mail marketing. Learn how to find motivated sellers, optimize campaigns, and maximize ROI.',
     type: 'website',
   },
+  alternates: {
+    canonical: 'https://remaildirect.com/blog',
+  },
 }
 
 export default function BlogPage() {

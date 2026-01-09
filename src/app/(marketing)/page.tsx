@@ -11,7 +11,9 @@ import { JsonLd, productSchema, faqSchema } from '@/components/seo/JsonLd'
 import { faqData } from '@/data/faq'
 
 export const metadata: Metadata = {
-  title: 'Direct Mail Automation for Real Estate Investors | REmail',
+  title: {
+    absolute: 'Direct Mail Automation for Real Estate Investors | REmail',
+  },
   description:
     'Done-with-you direct mail backed by 20M+ mailers sent. Full transparency, real-time control, and campaigns engineered to turn cold leads into closed deals. Built for wholesalers and flippers.',
   keywords: [

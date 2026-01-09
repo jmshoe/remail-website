@@ -35,6 +35,9 @@ export async function generateMetadata({
     title: `${post.title} | REmail Blog`,
     description: post.description,
     authors: [{ name: post.author }],
+    alternates: {
+      canonical: `${baseUrl}/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.description,

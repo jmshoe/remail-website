@@ -43,13 +43,12 @@ export function websiteSchema() {
     '@type': 'WebSite',
     name: 'REmail',
     url: 'https://remaildirect.com',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: 'https://remaildirect.com/search?q={search_term_string}',
-      },
-      'query-input': 'required name=search_term_string',
+    description:
+      'Direct mail automation platform for real estate investors. Automate postcards, letters, and campaigns to find motivated sellers.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'REmail',
+      url: 'https://remaildirect.com',
     },
   }
 }
