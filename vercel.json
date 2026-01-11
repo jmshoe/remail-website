@@ -2,6 +2,17 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
+      "source": "/:path+/",
+      "has": [
+        {
+          "type": "host",
+          "value": "remaildirect.com"
+        }
+      ],
+      "destination": "https://www.remaildirect.com/:path+",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
@@ -10,6 +21,17 @@
         }
       ],
       "destination": "https://www.remaildirect.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path+/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.remaildirect.com"
+        }
+      ],
+      "destination": "https://www.remaildirect.com/:path+",
       "permanent": true
     }
   ],
