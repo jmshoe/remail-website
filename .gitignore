@@ -54,3 +54,7 @@ prisma/*.db-journal
 .mcp.json
 .env*.local
 .playwright-mcp/
+
+# Playwright
+playwright-report/
+test-results/
