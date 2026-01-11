@@ -3,6 +3,9 @@ const nextConfig = {
   // Enable React strict mode for better development experience
   reactStrictMode: true,
 
+  // Explicitly disable trailing slashes to prevent redirect chains
+  trailingSlash: false,
+
   // Image optimization
   images: {
     remotePatterns: [
@@ -38,6 +41,33 @@ const nextConfig = {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.remail.com' }],
         destination: 'https://www.remaildirect.com/:path*',
+        permanent: true,
+      },
+      // Legacy URL redirects (from old Wix site)
+      {
+        source: '/privacy-policy',
+        destination: '/privacy',
+        permanent: true,
+      },
+      {
+        source: '/post/dc-home-buyer-east-coast-home-buyer',
+        destination: '/blog/direct-mail-automation-case-study-10x-roas',
+        permanent: true,
+      },
+      {
+        source: '/post/new-jersey-home-buyer',
+        destination: '/blog/direct-mail-case-study-43-percent-lower-cost-per-lead',
+        permanent: true,
+      },
+      {
+        source: '/post/easy-sell-new-jersey-home-buyer',
+        destination: '/blog/direct-mail-case-study-43-percent-lower-cost-per-lead',
+        permanent: true,
+      },
+      // Catch-all for old /post/* URLs - redirect to blog index
+      {
+        source: '/post/:slug*',
+        destination: '/blog',
         permanent: true,
       },
     ]
