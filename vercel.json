@@ -33,6 +33,11 @@
       ],
       "destination": "https://www.remaildirect.com/:path+",
       "permanent": true
+    },
+    {
+      "source": "/%2A",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [
