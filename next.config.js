@@ -70,6 +70,28 @@ const nextConfig = {
         destination: '/blog',
         permanent: true,
       },
+      // Wix placeholder pages - redirect to homepage
+      {
+        source: '/blank-1',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/blank-2',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/blank-3',
+        destination: '/',
+        permanent: true,
+      },
+      // Redirect literal asterisk URL (broken link from old site)
+      {
+        source: '/%2A',
+        destination: '/',
+        permanent: true,
+      },
     ]
   },
 
