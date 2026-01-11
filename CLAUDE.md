@@ -164,6 +164,66 @@ open http://localhost:<PORT>/<page-path>
 - Do NOT just provide a URL without opening it
 - Do NOT assume port 3000 - always verify from server output
 
+### Git Workflow
+
+**IMPORTANT**: Always follow this workflow for commits, pushes, and merges.
+
+#### Branch Strategy
+
+- **`main`** - Production branch, auto-deploys to Vercel
+- **`content-refactor`** (or feature branches) - Development work happens here
+
+#### Standard Workflow
+
+```bash
+# 1. Work on feature branch
+git checkout content-refactor  # or create: git checkout -b feature-name
+
+# 2. Make changes and commit
+git add <specific-files>       # Stage only relevant files
+git commit -m "Descriptive commit message
+
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>"
+
+# 3. Push to remote
+git push origin content-refactor
+
+# 4. Merge to main (when ready for production)
+git checkout main
+git pull origin main           # Always pull latest first
+git merge content-refactor --no-edit
+git push origin main
+
+# 5. Return to feature branch for more work
+git checkout content-refactor
+```
+
+#### Commit Guidelines
+
+- **Stage specific files** - Don't use `git add .` blindly; only stage files related to the current change
+- **Write clear messages** - First line is summary, blank line, then details if needed
+- **Include co-author** - Always add the Claude co-author line
+- **One logical change per commit** - Don't bundle unrelated changes
+
+#### When to Merge to Main
+
+Merge to `main` when:
+- Changes are tested and working
+- User explicitly requests deployment
+- After running `/deploy` command successfully
+
+#### Example Commit Message
+
+```
+Add legacy URL redirects from old Wix site
+
+Redirect old URLs indexed by Google to their new equivalents:
+- /privacy-policy → /privacy
+- /post/dc-home-buyer-* → /blog/*
+
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
+```
+
 ## Brand Guidelines
 
 - **Primary Color**: #2563EB (Blue - trust, professionalism)
