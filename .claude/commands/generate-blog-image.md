@@ -1,9 +1,15 @@
+---
+description: Generate or update a hero image for a blog post
+argument-hint: <slug> | --list | --all
+allowed-tools: Read, Write, Edit, Glob, Bash(ls:*), Bash(sips:*), mcp__gemini-nanobanana-mcp__generate_image
+---
+
 # Generate Blog Image
 
 Generate or update a hero image for an existing blog post with dual sourcing options: stock photos or AI generation.
 
 ## Arguments
-- $ARGUMENTS: Blog post slug, or flags like `--list` or `--all`
+- `$ARGUMENTS`: Blog post slug, or flags like `--list` or `--all`
 
 ## Instructions
 
@@ -70,19 +76,9 @@ Create these regardless of sourcing method:
 - Under 125 characters
 - Accessibility-friendly
 
-**Example:**
-- Post: "What is Skip Tracing in Real Estate?"
-- File: `skip-tracing-real-estate-hero.jpg`
-- Alt: `"Skip tracing dashboard showing property owner contact information for real estate investors"`
-
 ### Step 4: Provide Stock Photo Option
 
 Generate search terms and direct links for free stock photo sites.
-
-**Primary Search Terms** (3 variations based on post topic):
-1. Direct topic search
-2. Related concept search
-3. Abstract/mood search
 
 **Output Format:**
 ```markdown
@@ -97,12 +93,6 @@ Generate search terms and direct links for free stock photo sites.
 2. **Pexels** (Good variety, easy filtering)
    - ["{search term 1}"](https://www.pexels.com/search/{url-encoded-search}/)
    - ["{search term 2}"](https://www.pexels.com/search/{url-encoded-search}/)
-
-**Search Tips:**
-- {Specific tips based on the topic}
-- Look for images with blue/green tones to match brand
-- Avoid overly staged "stock photo" looks
-- Prefer clean, modern, minimalist compositions
 
 **License:** Both Unsplash and Pexels offer free commercial use with no attribution required.
 ```
@@ -119,189 +109,46 @@ soft natural lighting, professional photography style, 16:9 aspect ratio,
 no text overlays, high quality
 ```
 
-**Output Format:**
-```markdown
-## Option B: AI Generation
+### Step 6: Image Optimization (REQUIRED)
 
-**NanoBanana/Gemini Prompt:**
-```
-{Generated prompt specific to post topic}
-```
+After generating/downloading, optimize the image:
 
-**DALL-E 3 Prompt:** (if different wording works better)
-```
-{Adjusted prompt for DALL-E}
+```bash
+cd public/images/blog
+sips -s format jpeg -s formatOptions 50 --resampleWidth 1600 {filename}.jpg --out {filename}-optimized.jpg
+mv {filename}-optimized.jpg {filename}.jpg
 ```
 
-**Midjourney Prompt:**
-```
-{Prompt with --ar 16:9 --style raw}
-```
+**Target specifications:**
+- File size: **Under 200KB** (ideally 100-150KB)
+- Width: 1600px max
+- Format: JPEG
 
-**Generation Tips:**
-- {Tips specific to the visual concept}
-- Run 2-3 generations and pick the best
-- Regenerate if result looks too "AI-generated"
-```
+### Step 7: Update Frontmatter
 
-### Step 6: Output Complete Package
-
-Present everything in a clear, actionable format:
-
-```markdown
-# Blog Image: "{Post Title}"
-
-**Slug:** `{slug}`
-**Current Image:** {existing image path or "None"}
-
----
-
-## SEO Assets
-
-| Property | Value |
-|----------|-------|
-| **File Name** | `{filename}.jpg` |
-| **Alt Text** | "{alt text}" |
-| **Save Location** | `/public/images/blog/` |
-| **Specs** | 1920x1080px, <200KB, JPG/WebP |
-
----
-
-## Option A: Stock Photo Search (License-Free)
-
-{Stock photo section from Step 4}
-
----
-
-## Option B: AI Generation
-
-{AI generation section from Step 5}
-
----
-
-## After Getting Your Image
-
-1. **Optimize file size** - Use [TinyPNG](https://tinypng.com) or [Squoosh](https://squoosh.app) to compress to <200KB
-2. **Rename file** - Use the suggested filename: `{filename}.jpg`
-3. **Save to** - `/public/images/blog/`
-4. **Update frontmatter** - Add/update these fields in the MDX file:
-
+Update the MDX file with:
 ```yaml
 image: "/images/blog/{filename}.jpg"
-imageAlt: "{alt text}"
+imageAlt: "{generated alt text}"
 ```
-
----
-
-## Quick Actions
-
-- [ ] Choose sourcing method (Stock or AI)
-- [ ] Download/generate image
-- [ ] Optimize to <200KB
-- [ ] Save with correct filename
-- [ ] Update MDX frontmatter
-```
-
-### Step 7: Offer Frontmatter Update
-
-Ask the user if they'd like you to update the frontmatter automatically once they've saved the image.
 
 ---
 
 ## Batch Mode (`--all`)
 
 When `--all` flag is used:
-
 1. Scan all posts in `content/blog/`
 2. Identify posts where `image` field is missing or empty
-3. For each post, generate the SEO assets (file name, alt text)
-4. Output a summary table:
-
-```markdown
-# Blog Posts Missing Images
-
-| Post | Suggested Filename | Status |
-|------|-------------------|--------|
-| {title} | `{filename}.jpg` | Missing |
-| {title} | `{filename}.jpg` | Missing |
-
-## Batch Generation
-
-{For each post, provide abbreviated stock search + AI prompt}
-```
-
----
+3. For each post, generate the SEO assets
+4. Output a summary table
 
 ## List Mode (`--list`)
 
 When `--list` flag is used:
-
 1. Scan all posts in `content/blog/`
-2. Show status of each post's image:
-
-```markdown
-# Blog Image Status
+2. Show status of each post's image
 
 | Post | Image | Alt Text |
 |------|-------|----------|
 | {title} | ✅ `/images/blog/...` | ✅ Set |
 | {title} | ❌ Missing | ❌ Missing |
-| {title} | ✅ `/images/blog/...` | ⚠️ Using title fallback |
-```
-
----
-
-## Examples
-
-### Example: Skip Tracing Post
-
-**Input:** `/generate-blog-image what-is-skip-tracing-real-estate`
-
-**Stock Searches:**
-- Unsplash: "data analytics dashboard", "property research technology", "modern CRM interface"
-- Pexels: "database search", "contact information screen"
-
-**AI Prompt:**
-```
-Modern data visualization dashboard showing property owner contact details,
-clean search interface with blue (#2563EB) highlights, minimalist UI design,
-soft lighting, professional SaaS aesthetic, 16:9 aspect ratio, no text
-```
-
-### Example: Direct Mail Post
-
-**Input:** `/generate-blog-image direct-mail-vs-cold-calling`
-
-**Stock Searches:**
-- Unsplash: "professional postcards desk", "direct mail marketing", "modern workspace letters"
-- Pexels: "business mail correspondence", "marketing materials office"
-
-**AI Prompt:**
-```
-Modern minimalist workspace with professional postcards and marketing materials,
-clean white desk, blue and green accent colors, soft natural lighting,
-professional photography style, 16:9 aspect ratio, no text overlays
-```
-
----
-
-## NanoBanana MCP Check
-
-Before suggesting AI generation, check if NanoBanana MCP is available:
-
-```bash
-claude mcp list | grep nanobanana
-```
-
-If not installed, include setup instructions:
-
-```markdown
-**NanoBanana MCP Not Detected**
-
-To enable AI image generation, install NanoBanana MCP:
-```bash
-claude mcp add gemini-nanobanana-mcp -s user -e GEMINI_API_KEY="YOUR_KEY" -- npx -y gemini-nanobanana-mcp@latest
-```
-
-Get your API key: https://aistudio.google.com/apikey
-```

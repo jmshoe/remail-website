@@ -1,9 +1,15 @@
+---
+description: Create a new SEO-optimized blog post matching author's voice
+argument-hint: <topic>
+allowed-tools: Read, Write, Glob, Grep, Bash(ls:*), WebSearch, mcp__perplexity__search, mcp__gemini-nanobanana-mcp__generate_image, Bash(sips:*)
+---
+
 # Create New Blog Post
 
 Create a new SEO-optimized blog post for the REmail website that matches the author's voice.
 
 ## Arguments
-- $ARGUMENTS: The topic or title for the blog post
+- `$ARGUMENTS`: The topic or title for the blog post
 
 ## Instructions
 
@@ -52,7 +58,7 @@ Based on voice analysis and SEO research:
 Create the blog post file at `content/blog/[slug].mdx`:
 
 **External Links (IMPORTANT):**
-Before adding any external links, read `src/data/links.ts` which is the SINGLE SOURCE OF TRUTH for:
+Before adding any external links, read @src/data/links.ts which is the SINGLE SOURCE OF TRUTH for:
 - Social media links (`socialLinks`)
 - Affiliate links (`affiliateLinks`)
 - External resources (`externalResources`)
@@ -130,13 +136,6 @@ soft natural lighting, professional photography style, 16:9 aspect ratio,
 no text overlays, high quality
 ```
 
-**Example for "direct mail real estate":**
-```
-Modern minimalist workspace with professional postcards and property photos
-on a clean desk, blue and green accent colors, soft natural lighting,
-modern SaaS aesthetic, clean white background, 16:9 aspect ratio
-```
-
 #### 6.2 Suggest File Name (SEO-Optimized)
 
 File naming convention: `{target-keyword-slug}-hero.jpg`
@@ -144,12 +143,6 @@ File naming convention: `{target-keyword-slug}-hero.jpg`
 - Use lowercase, hyphenated format
 - Include the primary target keyword
 - Keep it descriptive but concise
-
-**Examples:**
-- `direct-mail-real-estate-hero.jpg`
-- `skip-tracing-guide-hero.jpg`
-- `tax-delinquent-properties-hero.jpg`
-- `wholesaling-marketing-strategies-hero.jpg`
 
 Save location: `/public/images/blog/`
 
@@ -161,34 +154,46 @@ Create descriptive, keyword-aligned alt text:
 - Keep under 125 characters
 - Make it useful for accessibility
 
-**Example:** `"Direct mail postcards for real estate investors displayed on a modern workspace desk"`
-
 #### 6.4 Image Source Options
 
-Present the following options to the user:
-
 **Option A: NanoBanana MCP (Recommended)**
-If NanoBanana MCP is configured (`claude mcp list` shows `gemini-nanobanana-mcp`):
+If NanoBanana MCP is configured:
 1. Use the generated prompt with NanoBanana's image generation tool
-2. Download/save the generated image
-3. Optimize to <200KB using TinyPNG or Squoosh
-4. Save to `/public/images/blog/{filename}.jpg`
+2. Save the generated image to `/public/images/blog/{filename}.jpg`
+3. **ALWAYS auto-optimize immediately** (see Step 6.5)
 
 **Option B: Stock Photos**
-Search Unsplash or Pexels with topic-derived search terms:
-- "modern [topic] workspace"
-- "[topic] professional"
-- "real estate [topic]"
-
-Download, rename to SEO-optimized filename, and save.
+Search Unsplash or Pexels with topic-derived search terms
 
 **Option C: Manual Generation**
-Provide the prompt for the user to generate via:
-- Midjourney
-- DALL-E 3 (via ChatGPT or Bing)
-- Adobe Firefly
+Provide the prompt for the user to generate via Midjourney, DALL-E 3, etc.
 
-#### 6.5 Verify Frontmatter
+#### 6.5 Auto-Optimize Image (REQUIRED)
+
+**ALWAYS optimize images immediately after generation/download.**
+
+On macOS, use `sips` (built-in):
+
+```bash
+cd public/images/blog
+
+# Optimize to ~120KB (quality 50, max width 1600px)
+sips -s format jpeg -s formatOptions 50 --resampleWidth 1600 {filename}.jpg --out {filename}-optimized.jpg
+
+# Check the size
+ls -la {filename}-optimized.jpg
+
+# If under 200KB, replace original
+mv {filename}-optimized.jpg {filename}.jpg
+```
+
+**Target specifications:**
+- File size: **Under 200KB** (ideally 100-150KB)
+- Width: 1600px max (will be responsive)
+- Format: JPEG (better compression for photos)
+- Quality: 40-60 (balance between size and quality)
+
+#### 6.6 Verify Frontmatter
 
 Confirm the MDX frontmatter includes correct image references:
 ```yaml
@@ -196,41 +201,10 @@ image: "/images/blog/{slug}-hero.jpg"
 imageAlt: "{generated alt text}"
 ```
 
-#### 6.6 Output Checklist
-
-Provide this checklist to the user:
-
-```
-## Hero Image Checklist
-
-- [ ] **Image Prompt:** [generated prompt]
-- [ ] **Suggested File Name:** {slug}-hero.jpg
-- [ ] **Alt Text:** [generated alt text]
-- [ ] **Specifications:** 1920x1080px, <200KB, JPG/WebP
-- [ ] **Save Location:** /public/images/blog/
-
-### Generation Options:
-1. NanoBanana MCP: Use prompt above with image generation tool
-2. Stock Photo: Search Unsplash/Pexels for "[topic keywords]"
-3. Manual: Copy prompt to Midjourney/DALL-E/Firefly
-
-### After Generation:
-1. Optimize file size (<200KB) using TinyPNG or Squoosh
-2. Save to /public/images/blog/ with suggested filename
-3. Verify frontmatter has correct image and imageAlt values
-```
-
 ---
 
-## NanoBanana MCP Setup
+## Reference Files
 
-If NanoBanana MCP is not installed, provide setup instructions:
-
-```bash
-# Install NanoBanana MCP (requires Gemini API key)
-claude mcp add gemini-nanobanana-mcp -s user -e GEMINI_API_KEY="YOUR_API_KEY" -- npx -y gemini-nanobanana-mcp@latest
-
-# Get Gemini API key from: https://aistudio.google.com/apikey
-```
-
-See `.claude/mcp/nanobanana-mcp-setup.md` for detailed setup instructions.
+- External links: @src/data/links.ts
+- Voice samples: `.claude/context/`
+- Existing blog posts: `content/blog/*.mdx`

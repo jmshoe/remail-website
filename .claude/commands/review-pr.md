@@ -1,9 +1,15 @@
+---
+description: Review a pull request for code quality and best practices
+argument-hint: <pr-number-or-branch>
+allowed-tools: Bash(git:*), Bash(gh:*), Read, Grep, Glob
+---
+
 # Review Pull Request
 
 Review a pull request for code quality, SEO impact, and best practices.
 
 ## Arguments
-- $ARGUMENTS: PR number or branch name to review
+- `$ARGUMENTS`: PR number or branch name to review
 
 ## Review Checklist
 
@@ -47,14 +53,34 @@ Review a pull request for code quality, SEO impact, and best practices.
 - CLAUDE.md updated if architecture changed
 
 ## Review Process
-1. Fetch the PR branch
-2. Review changed files
-3. Run tests locally
-4. Check build succeeds
+
+1. Fetch the PR branch:
+   ```bash
+   gh pr checkout $ARGUMENTS
+   ```
+
+2. Review changed files:
+   ```bash
+   gh pr diff $ARGUMENTS
+   ```
+
+3. Run tests locally:
+   ```bash
+   npm run test
+   ```
+
+4. Check build succeeds:
+   ```bash
+   npm run build
+   ```
+
 5. Provide feedback with specific line references
 
 ## Output Format
+
 Provide review as:
 - **Approve**: Ready to merge
 - **Request Changes**: Must fix before merge (list issues)
 - **Comment**: Suggestions, questions, or minor improvements
+
+Include specific file:line references for all feedback.

@@ -1,9 +1,15 @@
+---
+description: Generate SEO-optimized content briefs for REmail blog posts
+argument-hint: [focus-area] or [number] ideas
+allowed-tools: Glob, Grep, Read, Bash(ls:*), WebSearch, mcp__perplexity__search, mcp__perplexity__reason
+---
+
 # Generate Content Ideas
 
 Generate SEO-optimized content briefs for REmail blog posts based on keyword strategy and competitive research.
 
 ## Arguments
-- $ARGUMENTS: Optional focus area (e.g., "skip tracing", "quick wins", "competitor comparisons") or number of ideas (e.g., "5 ideas")
+- `$ARGUMENTS`: Optional focus area (e.g., "skip tracing", "quick wins", "competitor comparisons") or number of ideas (e.g., "5 ideas")
 
 ## Instructions
 
@@ -11,9 +17,7 @@ Generate SEO-optimized content briefs for REmail blog posts based on keyword str
 
 Read the target keywords file to understand priorities:
 
-```
-Read: docs/TARGET-KEYWORDS.md
-```
+@docs/TARGET-KEYWORDS.md
 
 Extract keywords by tier:
 - **Tier 1**: High-volume opportunity keywords (1,000+ searches)
@@ -133,7 +137,7 @@ Rank the briefs by:
 3. **Product fit** (directly supports REmail features)
 4. **Content gap** (not covered elsewhere on site)
 
-Present a prioritized list with recommendations:
+Present a prioritized list:
 
 | Priority | Topic | Volume | Competition | Est. Difficulty | Why Now |
 |----------|-------|--------|-------------|-----------------|---------|
@@ -149,8 +153,6 @@ Deliver as:
 1. **Summary table** (prioritized list)
 2. **Full briefs** (detailed template for each)
 3. **Next steps**: Which to create first, any dependencies
-
-If the user wants more ideas, they can run `/content-ideas 10 ideas` or `/content-ideas quick wins`.
 
 ---
 
@@ -176,17 +178,11 @@ If the user wants more ideas, they can run `/content-ideas 10 ideas` or `/conten
 ```
 → Generates 10 content briefs instead of default 5
 
-```
-/content-ideas competitor comparisons
-```
-→ Focuses on Tier 2 competitor/tool keywords
-
 ---
 
 ## Reference Files
 
-- **Keyword strategy**: `docs/TARGET-KEYWORDS.md`
-- **Content pipeline**: `docs/content-creation.md`
-- **Existing blog**: `content/blog/*.mdx`
-- **Marketing pages**: `src/app/(marketing)/**/page.tsx`
-- **Publish command**: `/new-blog-post`
+- Keyword strategy: @docs/TARGET-KEYWORDS.md
+- Existing blog: `content/blog/*.mdx`
+- Marketing pages: `src/app/(marketing)/**/page.tsx`
+- Publish command: `/new-blog-post`

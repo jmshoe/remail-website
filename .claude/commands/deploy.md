@@ -1,3 +1,8 @@
+---
+description: Deploy the REmail website to production
+allowed-tools: Bash(npm run:*), Bash(npx vercel:*), Bash(git:*), Bash(curl:*)
+---
+
 # Deploy Command
 
 Deploy the REmail website to production.
@@ -74,35 +79,7 @@ git push origin main
 git checkout content-refactor
 ```
 
-## Complete Workflow Example
-
-```bash
-# 1. Quality checks
-npm run lint && npm run type-check && npm run build
-
-# 2. Deploy to Vercel
-npx vercel --prod
-
-# 3. Commit changes
-git add next.config.js
-git commit -m "Add URL redirects for SEO
-
-Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>"
-
-# 4. Push feature branch
-git push origin content-refactor
-
-# 5. Merge to main
-git checkout main
-git pull origin main
-git merge content-refactor --no-edit
-git push origin main
-
-# 6. Return to feature branch
-git checkout content-refactor
-```
-
-## Post-deployment
+## Post-deployment Verification
 
 1. Verify deployment at https://www.remaildirect.com
 2. Test critical user flows:
