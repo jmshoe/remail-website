@@ -19,7 +19,7 @@ const features = [
   {
     name: 'Skip Tracing Integration',
     description:
-      'Find property owner contact information instantly. Get phone numbers, emails, and mailing addresses.',
+      'Access to skip tracing APIs from trusted third-party providers. Find phone numbers, emails, and mailing addresses.',
     icon: Search,
   },
   {

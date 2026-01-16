@@ -38,6 +38,6 @@ export const faqData = [
   {
     question: 'Can I use my own mailing list?',
     answer:
-      'Yes! You can upload your own CSV or Excel lists, or work with us on data-driven list selection. No matter the data source, we isolate the best performing segments to drive hot leads. We also offer skip tracing to find missing contact information.',
+      'Yes! You can upload your own CSV or Excel lists, or work with us on data-driven list selection. No matter the data source, we isolate the best performing segments to drive hot leads. Skip tracing integration is also available through trusted third-party providers to help find missing contact information.',
   },
 ]

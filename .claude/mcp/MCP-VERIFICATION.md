@@ -2,97 +2,95 @@
 
 This document verifies that all MCP servers are properly installed and configured for the REmail project.
 
-## Browser MCP (Chromium) - ✅ VERIFIED
+## Quick Status Check
 
-**Status:** Installed and Working
+Run `claude mcp list` to see all connected servers.
 
-**Servers:**
-- `cursor-browser-extension` - Primary browser interface
-- `cursor-ide-browser` - Alternative browser interface
+## MCP Servers
 
-**Verification:**
-- ✅ Browser tools are accessible
-- ✅ Can navigate to URLs
-- ✅ Can take screenshots
-- ✅ Can interact with pages
-- ✅ Configuration in `.claude/settings.local.json`
+| Server | Status | Purpose |
+|--------|--------|---------|
+| `dataforseo` | ✅ | SEO research, keyword data |
+| `firecrawl` | ✅ | Web scraping, content extraction |
+| `perplexity` | ✅ | AI-powered web search |
+| `playwright` | ✅ | Browser automation |
+| `chrome-devtools` | ✅ | Chrome debugging |
+| `gemini-nanobanana-mcp` | ✅ | AI image generation |
 
-**Test Command:**
-```
-"Navigate to localhost:3000 and verify the browser MCP is working"
-```
+## DataForSEO MCP
 
-## DataForSEO MCP - ✅ CONFIGURED
+**Configuration:** Uses HTTP mode with DataForSEO's hosted MCP endpoint.
 
-**Status:** Configured via MCP server
+**Credentials Location:** `~/.claude.json` (stored in project-specific mcpServers)
 
-**Configuration:**
-- Server: `dataforseo`
-- Enabled in: `.claude/settings.local.json`
-- Alternative: Bash script at `scripts/dataforseo.sh`
+**Setup:**
+```bash
+# Credentials are stored in ~/.claude.json under projects["/path/to/project"].mcpServers.dataforseo
+# The Authorization header uses base64-encoded username:password
 
-## Configuration Files
-
-### `.claude/settings.local.json`
-```json
-{
-  "enableAllProjectMcpServers": true,
-  "enabledMcpjsonServers": ["dataforseo"],
-  "mcpServers": {
-    "cursor-browser-extension": {
-      "enabled": true
-    },
-    "cursor-ide-browser": {
-      "enabled": true
-    }
-  }
-}
+# To generate base64 credentials:
+echo -n "your-email@example.com:your-api-password" | base64
 ```
 
-## How to Verify Browser MCP
+**Fallback:** If MCP has issues, use the bash script: `./scripts/dataforseo.sh`
 
-1. **Start dev server:**
-   ```bash
-   npm run dev
-   ```
+**Common Issue - 401 Error:**
+If you get authentication errors, verify the credentials in `~/.claude.json` match your DataForSEO API credentials. You can check your Cursor MCP config (`~/.cursor/mcp.json`) for reference.
 
-2. **Ask Claude:**
-   ```
-   "Navigate to localhost:3000 and take a screenshot"
-   ```
+## Other MCP Servers
 
-3. **Expected Result:**
-   - Browser navigates to the URL
-   - Screenshot is captured
-   - Page elements are accessible
+### Firecrawl
+```bash
+claude mcp add firecrawl -e FIRECRAWL_API_KEY=your-key -- npx -y @mseep/firecrawl-mcp
+```
+
+### Perplexity
+```bash
+claude mcp add perplexity -e PERPLEXITY_API_KEY=your-key -- npx -y @mseep/perplexity-mcp
+```
+
+### Playwright
+```bash
+claude mcp add playwright -- npx @playwright/mcp@latest
+```
+
+### Chrome DevTools
+```bash
+claude mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
+```
+
+### Gemini Image Generation
+```bash
+claude mcp add gemini-nanobanana-mcp -s user -e GEMINI_API_KEY=your-key -- npx -y gemini-nanobanana-mcp@latest
+```
 
 ## Troubleshooting
 
-### Browser MCP Not Working
+### DataForSEO 401 Error
 
-1. **Check Cursor version:**
-   - Browser MCP requires Cursor with MCP support
-   - Update Cursor if needed
+The most common issue. Fix:
 
-2. **Verify settings:**
-   - Check `.claude/settings.local.json`
-   - Ensure `enableAllProjectMcpServers: true`
+1. Check Cursor config for correct credentials:
+   ```bash
+   cat ~/.cursor/mcp.json | grep -A5 dataforseo
+   ```
 
-3. **Restart Cursor:**
-   - Close and reopen Cursor
-   - MCP servers load on startup
+2. Generate the base64 auth header:
+   ```bash
+   echo -n "email:password" | base64
+   ```
 
-4. **Check MCP status:**
-   - Look for MCP server errors in Cursor
-   - Check Cursor's MCP server status panel
+3. Update `~/.claude.json` with the correct Authorization header
 
-### DataForSEO MCP Issues
+4. **Restart Claude Code** for changes to take effect
 
-- Use bash script fallback: `scripts/dataforseo.sh`
-- See `.claude/mcp/mcp-setup.md` for details
+### MCP Server Not Connecting
+
+1. Check status: `claude mcp list`
+2. Restart Claude Code
+3. Check if npx packages need updating
 
 ## Last Verified
 
-- Date: 2024-12-19
-- Browser MCP: ✅ Working
-- DataForSEO MCP: ✅ Configured
+- Date: 2025-01-05
+- All MCP servers: ✅ Connected

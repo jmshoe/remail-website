@@ -58,3 +58,9 @@ prisma/*.db-journal
 # Playwright
 playwright-report/
 test-results/
+
+# Internal docs (not for repo)
+docs/
+
+# Content ideas/briefs (working files)
+content/ideas/

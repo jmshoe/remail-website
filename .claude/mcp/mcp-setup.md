@@ -1,80 +1,107 @@
-# SEO Tools Setup
+# DataForSEO Setup
 
-This document covers the SEO tools available in this project.
+This document covers DataForSEO integration for SEO research.
 
-## Current Setup: Direct API via Bash Script
+## Primary: MCP Server
 
-The DataForSEO API is accessed via `scripts/dataforseo.sh`, which reads credentials from `.env`.
+Claude Code uses DataForSEO via MCP (Model Context Protocol) for direct tool access.
 
 ### Configuration
 
-1. **Set up `.env`:**
+The MCP server uses HTTP mode with DataForSEO's hosted endpoint:
+
+**Location:** `~/.claude.json` → `projects["/path/to/project"].mcpServers.dataforseo`
+
+```json
+{
+  "dataforseo": {
+    "type": "http",
+    "url": "https://mcp.dataforseo.com/http",
+    "headers": {
+      "Authorization": "Basic <base64-encoded-credentials>"
+    }
+  }
+}
+```
+
+### Setup Steps
+
+1. **Get your DataForSEO credentials** from [DataForSEO Dashboard](https://app.dataforseo.com/)
+
+2. **Generate base64 auth:**
+   ```bash
+   echo -n "your-email@example.com:your-api-password" | base64
+   ```
+
+3. **Update Claude config** (the credentials are stored per-project in ~/.claude.json)
+
+4. **Restart Claude Code** for changes to take effect
+
+5. **Verify:** `claude mcp list` should show `dataforseo: ✓ Connected`
+
+### Available MCP Tools
+
+| Tool | Purpose |
+|------|---------|
+| `mcp__dataforseo__keywords_data_google_ads_search_volume` | Search volume data |
+| `mcp__dataforseo__dataforseo_labs_google_keyword_ideas` | Keyword ideas |
+| `mcp__dataforseo__dataforseo_labs_google_keyword_suggestions` | Autocomplete suggestions |
+| `mcp__dataforseo__dataforseo_labs_google_related_keywords` | Related keywords |
+| `mcp__dataforseo__dataforseo_labs_google_ranked_keywords` | Domain rankings |
+| `mcp__dataforseo__dataforseo_labs_google_competitors_domain` | Competitor analysis |
+| `mcp__dataforseo__dataforseo_labs_google_domain_rank_overview` | Domain overview |
+| `mcp__dataforseo__serp_organic_live_advanced` | Live SERP results |
+| `mcp__dataforseo__backlinks_*` | Backlink analysis tools |
+| `mcp__dataforseo__content_analysis_*` | Content analysis tools |
+
+### Troubleshooting 401 Errors
+
+1. **Check Cursor config for reference credentials:**
+   ```bash
+   cat ~/.cursor/mcp.json | grep -A5 dataforseo
+   ```
+
+2. **Verify the base64 encoding matches:**
+   ```bash
+   echo -n "email:password" | base64
+   ```
+
+3. **Update ~/.claude.json** with correct credentials
+
+4. **Restart Claude Code**
+
+---
+
+## Fallback: Bash Script
+
+If MCP has issues, use the bash script at `scripts/dataforseo.sh`.
+
+### Configuration
+
+Set up `.env`:
 ```bash
 DATAFORSEO_LOGIN="your-email@example.com"
 DATAFORSEO_PASSWORD="your-api-password"
-DATAFORSEO_BASE64="base64-encoded-credentials"  # optional
 ```
 
-2. **Get your base64 credentials:**
-```bash
-echo -n "email:password" | base64
-```
+### Usage
 
-3. **Test the setup:**
 ```bash
-./scripts/dataforseo.sh search_volume '[{"keywords": ["test"], "location_code": 2840, "language_code": "en"}]'
+./scripts/dataforseo.sh search_volume '[{"keywords": ["direct mail real estate"], "location_code": 2840, "language_code": "en"}]'
 ```
 
 ### Available Endpoints
 
 | Endpoint | Purpose |
 |----------|---------|
-| `search_volume` | Google Ads search volume data |
-| `keyword_ideas` | Keyword ideas from seed keywords |
-| `keyword_suggestions` | Autocomplete-style suggestions |
-| `related_keywords` | Related keywords with depth |
-| `ranked_keywords` | Keywords a domain ranks for |
-| `competitors` | Competitor domain discovery |
-| `domain_overview` | Domain traffic/ranking metrics |
+| `search_volume` | Google Ads search volume |
+| `keyword_ideas` | Keyword ideas from seeds |
+| `keyword_suggestions` | Autocomplete suggestions |
+| `related_keywords` | Related keywords |
+| `ranked_keywords` | Domain rankings |
+| `competitors` | Competitor domains |
+| `domain_overview` | Domain metrics |
 | `serp` | Live SERP results |
-
-### Usage Examples
-
-**Search Volume:**
-```bash
-./scripts/dataforseo.sh search_volume '[{"keywords": ["direct mail real estate", "wholesaling postcards"], "location_code": 2840, "language_code": "en"}]'
-```
-
-**Keyword Ideas:**
-```bash
-./scripts/dataforseo.sh keyword_ideas '[{"keywords": ["direct mail"], "location_name": "United States", "language_code": "en", "limit": 20}]'
-```
-
-**Competitor Analysis:**
-```bash
-./scripts/dataforseo.sh ranked_keywords '[{"target": "competitor.com", "location_name": "United States", "language_code": "en", "limit": 50}]'
-```
-
----
-
-## Alternative: MCP Server (Reference)
-
-The project also has DataForSEO MCP server configured, but it may have authentication issues depending on your environment.
-
-### MCP Configuration
-
-The MCP server is configured in `.claude/settings.json`. If using MCP:
-
-1. Ensure credentials are passed via environment variables or the `env` block
-2. Use `DATAFORSEO_USERNAME` (not `DATAFORSEO_LOGIN`) for MCP compatibility
-3. Restart Claude Code after configuration changes
-
-### Troubleshooting MCP Auth
-
-If you see 401 errors with MCP:
-- Verify credentials work via curl (see `scripts/test-dataforseo-api.js`)
-- Check that env vars are being passed to the MCP server process
-- Consider using the bash script approach instead
 
 ---
 

@@ -65,7 +65,7 @@ jobs:
       - name: Build application
         run: npm run build
         env:
-          NEXT_PUBLIC_APP_URL: https://remail.com
+          NEXT_PUBLIC_APP_URL: https://www.remaildirect.com
 
   test:
     name: Unit Tests
