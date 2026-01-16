@@ -112,6 +112,9 @@ npm run db:studio        # Open Prisma Studio
 # Testing
 npm run test             # Run tests
 npm run test:e2e         # Run E2E tests
+
+# SEO
+npm run sitemap:submit   # Submit sitemap to Google/Bing/Yandex
 ```
 
 ## Environment Variables
@@ -125,6 +128,9 @@ Required environment variables (see `.env.example`):
 - `RESEND_API_KEY` - Email service API key
 - `NEXT_PUBLIC_VAPI_PUBLIC_KEY` - Vapi public API key (for chat widget)
 - `FIRECRAWL_API_KEY` - Fire Crawl API key (for MCP web scraping - optional)
+- `GOOGLE_SERVICE_ACCOUNT_EMAIL` - GSC API service account email
+- `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY` - GSC API service account private key
+- `INDEXNOW_API_KEY` - IndexNow API key for Bing/Yandex (optional)
 
 ## Code Standards
 
@@ -469,6 +475,7 @@ This project includes custom skills, commands, and scripts for Claude Code.
 │   ├── content-refresh.md      # /content-refresh
 │   ├── db-migrate.md           # /db-migrate
 │   ├── deploy.md               # /deploy
+│   ├── submit-sitemap.md       # /submit-sitemap
 │   ├── performance-check.md    # /performance-check
 │   └── review-pr.md            # /review-pr
 ├── scripts/                    # Helper scripts
@@ -604,6 +611,7 @@ Manually invoke with `/command-name`:
 | `/new-landing-page` | Create a new landing page | `/new-landing-page topic` |
 | `/new-component` | Scaffold a new component | `/new-component Button` |
 | `/deploy` | Deploy to production | `/deploy` |
+| `/submit-sitemap` | Submit sitemap to search engines | `/submit-sitemap` |
 | `/review-pr` | Review a pull request | `/review-pr 123` |
 
 ### DataForSEO API
