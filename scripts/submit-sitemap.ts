@@ -16,7 +16,11 @@
  *   - INDEXNOW_API_KEY (optional, will generate if not set)
  */
 
+import { config } from 'dotenv';
 import { google } from 'googleapis';
+
+// Load environment variables from .env file
+config();
 
 const SITE_URL = 'https://www.remaildirect.com';
 const SITEMAP_URL = `${SITE_URL}/sitemap.xml`;
