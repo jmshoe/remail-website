@@ -1,31 +1,49 @@
 # REmail Content Ideas - January 2026
 
 *Generated: January 4, 2026*
+*Last Updated: January 16, 2026*
 
-## Executive Summary
+## Progress Summary
 
-Based on keyword research and existing content inventory, here are **5 high-priority content opportunities** for January 2026. These target quick wins (LOW competition) and high-volume gaps in your current coverage.
+| Status | Count |
+|--------|-------|
+| ✅ Completed | 5 |
+| ⏳ In Progress | 0 |
+| 📋 To Do | 0 |
 
 ---
 
 ## Priority Summary Table
 
-| Priority | Topic | Volume | Competition | Est. Difficulty | Why Now |
-|----------|-------|--------|-------------|-----------------|---------|
-| 1 | What is Skip Tracing for Real Estate? | 110 | LOW | Easy | **Quick win** - No existing content, gateway to 22K volume hub |
-| 2 | Tax Delinquent Property List Guide | 590 | LOW | Easy | **Quick win** - High commercial intent, 2026 Opportunity Zone changes |
-| 3 | Driving for Dollars vs Direct Mail | 1,000 | LOW | Easy | **Quick win** - Trending topic, complements existing comparison post |
-| 4 | Pre-Foreclosure List: Complete Guide | 1,300 | MEDIUM | Medium | High volume list-type keyword, part of Property Lists hub |
-| 5 | REmail vs PropStream Comparison | 49,500 | MEDIUM | Medium | Massive competitor volume, captures alternative-seeking traffic |
+| Priority | Topic | Volume | Competition | Status | Published |
+|----------|-------|--------|-------------|--------|-----------|
+| 1 | What is Skip Tracing for Real Estate? | 110 | LOW | ✅ Done | `what-is-skip-tracing-real-estate.mdx` |
+| 2 | Tax Delinquent Property List Guide | 590 | LOW | ✅ Done | `tax-delinquent-property-list.mdx` |
+| 3 | Driving for Dollars vs Direct Mail | 1,000 | LOW | ✅ Done | `driving-for-dollars-vs-direct-mail.mdx` |
+| 4 | Pre-Foreclosure List: Complete Guide | 1,300 | MEDIUM | ✅ Done | `pre-foreclosure-list.mdx` |
+| 5 | PropStream vs PropertyRadar Comparison | 49,500 | MEDIUM | ✅ Done | `propstream-vs-propertyradar.mdx` |
 
 ---
 
-## Existing Content Inventory
+## Current Content Inventory
 
-### Blog Posts
-- `best-direct-mail-for-wholesalers.mdx` - Wholesaling direct mail strategies
-- `direct-mail-vs-cold-calling-real-estate.mdx` - Comparison content
-- `how-to-find-absentee-owners.mdx` - Absentee owner list guide
+### Blog Posts (10 published)
+
+**Educational Content:**
+- `what-is-skip-tracing-real-estate.mdx` - Skip tracing guide ✅ NEW
+- `tax-delinquent-property-list.mdx` - Tax delinquent lists guide ✅ NEW
+- `pre-foreclosure-list.mdx` - Pre-foreclosure lists guide ✅ NEW
+- `driving-for-dollars-vs-direct-mail.mdx` - Comparison content ✅ NEW
+- `propstream-vs-propertyradar.mdx` - Software comparison ✅ NEW
+
+**Cost & ROI Content:**
+- `direct-mail-cost-pricing-guide.mdx` - Pricing guide
+- `reduce-cost-per-lead-direct-mail.mdx` - Cost optimization
+
+**Case Studies:**
+- `direct-mail-automation-case-study-10x-roas.mdx` - East Coast 10x ROAS
+- `direct-mail-case-study-30-percent-cost-reduction.mdx` - NC scaling case study
+- `direct-mail-case-study-43-percent-lower-cost-per-lead.mdx` - NJ CPL optimization
 
 ### Marketing Pages
 - `/wholesalers` - Wholesaler landing page
@@ -37,7 +55,7 @@ Based on keyword research and existing content inventory, here are **5 high-prio
 
 ---
 
-## Content Brief 1: What is Skip Tracing for Real Estate?
+## Content Brief 1: What is Skip Tracing for Real Estate? ✅ COMPLETED
 
 **ID / slug idea**: `what-is-skip-tracing-real-estate`
 
@@ -112,7 +130,7 @@ Based on keyword research and existing content inventory, here are **5 high-prio
 
 ---
 
-## Content Brief 2: Tax Delinquent Property List Guide
+## Content Brief 2: Tax Delinquent Property List Guide ✅ COMPLETED
 
 **ID / slug idea**: `tax-delinquent-property-list`
 
@@ -185,7 +203,7 @@ Based on keyword research and existing content inventory, here are **5 high-prio
 
 ---
 
-## Content Brief 3: Driving for Dollars vs Direct Mail
+## Content Brief 3: Driving for Dollars vs Direct Mail ✅ COMPLETED
 
 **ID / slug idea**: `driving-for-dollars-vs-direct-mail`
 
@@ -257,7 +275,7 @@ Based on keyword research and existing content inventory, here are **5 high-prio
 
 ---
 
-## Content Brief 4: Pre-Foreclosure List Complete Guide
+## Content Brief 4: Pre-Foreclosure List Complete Guide ✅ COMPLETED
 
 **ID / slug idea**: `pre-foreclosure-list`
 
@@ -330,88 +348,46 @@ Based on keyword research and existing content inventory, here are **5 high-prio
 
 ---
 
-## Content Brief 5: REmail vs PropStream Comparison
+## Content Brief 5: PropStream vs PropertyRadar Comparison
 
-**ID / slug idea**: `remail-vs-propstream`
+> **Full brief available:** See `propstream-vs-propertyradar.md` for complete research and outline.
+
+**ID / slug idea**: `propstream-vs-propertyradar`
 
 **Primary keyword**: propstream (49,500 monthly, MEDIUM competition)
 
-**Secondary keywords (5-10)**:
-- propstream alternative
-- propstream vs deal machine
-- propstream pricing
-- propstream reviews
-- best skip tracing software
-- real estate investor tools
-- propstream competitors
+**Secondary keywords**: propstream alternative (1,900/mo), propstream vs propertyradar (720/mo), propertyradar review (590/mo)
 
-**Headline (SEO-safe)**: REmail vs PropStream: Which is Better for Direct Mail?
+**Headline**: PropStream vs PropertyRadar: The Automation Gap That's Costing You Deals
 
-**Headline (attention-first)**: Why Smart Investors Are Switching from PropStream
+**Editorial Angle**: PropertyRadar is the superior choice for investors who need automation, API access, and workflow integration. While both platforms offer similar data at comparable prices, PropertyRadar's automation capabilities (webhooks, API, Zapier integration with 8,000+ apps) make it the clear winner for scaling operations. PropStream has NO public API, NO webhooks, and NO Zapier — leaving users stuck in "manual export hell."
 
-**One-paragraph summary**: PropStream is a popular data and skip tracing tool for real estate investors. But how does it compare to REmail for direct mail automation? This comparison breaks down features, pricing, integration, and ROI for investors deciding between tools—or looking to use both together.
+**Key Differentiators**:
+- PropertyRadar: Full REST API, webhooks, 8,000+ Zapier integrations
+- PropStream: No API, no webhooks, no Zapier — manual CSV exports only
+- Similar base pricing ($99-$119/mo)
+- PropertyRadar includes 250 skip traces/mo; PropStream charges $0.12/record
+- Time savings: 5-10 hours/week with PropertyRadar automation
 
-**Search intent + audience**: Commercial (comparison shopping) + All investors
+**Search intent**: Commercial (comparison shopping) + Informational
 
-**Differentiation vs existing content**: No competitor comparison pages exist. High-volume opportunity.
-
-**Suggested outline (H2/H3)**:
-1. H2: What is PropStream?
-   - H3: Features Overview
-   - H3: Who Uses PropStream
-2. H2: What is REmail?
-   - H3: Features Overview
-   - H3: Who Uses REmail
-3. H2: Feature Comparison Table
-4. H2: Pricing Comparison
-5. H2: When to Use PropStream
-6. H2: When to Use REmail
-7. H2: Using PropStream + REmail Together
-   - H3: Integration Workflow
-   - H3: Best Practices
-8. H2: User Reviews and Testimonials
-9. H2: FAQ
-10. H2: CTA
-
-**Internal link targets (3+)**:
-- `/pricing` - "REmail pricing"
-- `/services` - "REmail features"
-- `/wholesalers` - "direct mail for wholesalers"
-
-**Extractable facts (5-10 bullets)**:
-- PropStream: $99/month for data + skip tracing, no native direct mail
-- PropStream has 49,500 monthly searches (massive brand awareness)
-- REmail focuses on direct mail automation; PropStream focuses on data
-- Most investors use multiple tools: data + CRM + mail fulfillment
-- Integration opportunity: Use PropStream for lists, REmail for mail
-
-**Overlap report**:
-- Risk: Low
-- Most similar existing pages/posts: None
-- How we avoid cannibalization: Unique comparison page format
-
-**Keyword distribution plan**:
-- H1: Include "PropStream" and "REmail"
-- Meta title: REmail vs PropStream: Direct Mail Tool Comparison 2026
-- First 100 words: Position the comparison and what readers will learn
-- H2s with partial match: "What is PropStream", "PropStream Features"
-- Target density: ~0.5% for PropStream, ~0.8% for REmail (it's our site)
+**Word count target**: 3,000-4,000 words
 
 ---
 
-## Recommended Publishing Order
+## Publishing Progress
 
-1. **Week 1**: "What is Skip Tracing for Real Estate?" (LOW competition quick win, anchors high-volume hub)
-2. **Week 2**: "Tax Delinquent Property List Guide" (LOW competition, timely with 2026 Opportunity Zone changes)
-3. **Week 3**: "Driving for Dollars vs Direct Mail" (LOW competition, trending topic)
-4. **Week 4**: "Pre-Foreclosure List Complete Guide" (MEDIUM competition, high volume)
-5. **Month 2**: "REmail vs PropStream" (captures massive competitor search volume)
+1. ✅ **Week 1**: "What is Skip Tracing for Real Estate?" — Published Jan 4
+2. ✅ **Week 2**: "Tax Delinquent Property List Guide" — Published Jan 4
+3. ✅ **Week 3**: "Driving for Dollars vs Direct Mail" — Published Jan 4
+4. ✅ **Week 4**: "Pre-Foreclosure List Complete Guide" — Published Jan 4
+5. ✅ **Week 5**: "PropStream vs PropertyRadar" — Published Jan 16, captures massive search volume (49,500/mo)
 
 ## Dependencies
 
-- Skip tracing post should go first—it establishes the foundation for other content that references skip tracing
-- Property list posts (tax delinquent, pre-foreclosure) can be published in any order
-- PropStream comparison page should wait until core service pages are optimized
+- ✅ ~~Skip tracing post should go first—it establishes the foundation for other content that references skip tracing~~
+- ✅ ~~Property list posts (tax delinquent, pre-foreclosure) can be published in any order~~
+- ✅ ~~PropStream comparison page should wait until core service pages are optimized~~ (Pivoted to PropStream vs PropertyRadar — ready to publish)
 
 ## To Create a Post
 
