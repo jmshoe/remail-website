@@ -1,5 +1,5 @@
 {
-  "name": "remail",
+  "name": "remail-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -22,7 +22,8 @@
     "db:studio": "prisma studio",
     "db:generate": "prisma generate",
     "analyze": "ANALYZE=true next build",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "sitemap:submit": "npx tsx scripts/submit-sitemap.ts"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.0.0",
@@ -41,6 +42,8 @@
     "@vapi-ai/web": "^2.5.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "google-auth-library": "^9.0.0",
+    "googleapis": "^144.0.0",
     "gray-matter": "^4.0.3",
     "lob": "^6.0.0",
     "lucide-react": "^0.300.0",
@@ -78,6 +81,7 @@
     "prettier-plugin-tailwindcss": "^0.5.0",
     "prisma": "^5.0.0",
     "tailwindcss": "^3.4.0",
+    "tsx": "^4.7.0",
     "typescript": "^5.0.0",
     "vitest": "^1.0.0"
   },

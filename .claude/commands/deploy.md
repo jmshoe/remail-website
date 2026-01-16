@@ -79,6 +79,19 @@ git push origin main
 git checkout content-refactor
 ```
 
+### Step 6: Submit Sitemap to Search Engines
+
+After deployment, submit the sitemap for faster indexing:
+
+```bash
+npm run sitemap:submit
+```
+
+This submits to:
+- Google Search Console (via API)
+- Bing (via IndexNow)
+- Yandex (via IndexNow)
+
 ## Post-deployment Verification
 
 1. Verify deployment at https://www.remaildirect.com
