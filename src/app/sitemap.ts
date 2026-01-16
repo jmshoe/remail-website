@@ -1,7 +1,10 @@
 import { MetadataRoute } from 'next'
 import { getAllBlogSlugs } from '@/lib/mdx'
 
-const baseUrl = (process.env.NEXT_PUBLIC_APP_URL || 'https://www.remaildirect.com').replace(/\/+$/, '')
+// Ensure canonical domain always uses www.
+const baseUrl = (process.env.NEXT_PUBLIC_APP_URL || 'https://www.remaildirect.com')
+  .replace('://remaildirect.com', '://www.remaildirect.com')
+  .replace(/\/+$/, '')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Static marketing pages

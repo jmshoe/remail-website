@@ -64,8 +64,15 @@ export const isServer = typeof window === 'undefined'
 
 /**
  * Get absolute URL for a path
+ * Always uses www. for production URLs
  */
 export function absoluteUrl(path: string): string {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
+  let baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
+  // Force www. prefix for production canonical URLs
+  if (baseUrl.includes('remaildirect.com') && !baseUrl.includes('www.')) {
+    baseUrl = baseUrl.replace('://remaildirect.com', '://www.remaildirect.com')
+  }
+  // Remove trailing slash from base URL
+  baseUrl = baseUrl.replace(/\/$/, '')
   return `${baseUrl}${path}`
 }

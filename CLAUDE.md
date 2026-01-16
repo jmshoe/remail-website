@@ -471,6 +471,8 @@ This project includes custom skills, commands, and scripts for Claude Code.
 │   ├── deploy.md               # /deploy
 │   ├── performance-check.md    # /performance-check
 │   └── review-pr.md            # /review-pr
+├── scripts/                    # Helper scripts
+│   └── gsc.sh                  # Google Search Console API helper
 └── mcp/                        # MCP server documentation
     ├── mcp-setup.md            # DataForSEO MCP setup
     ├── firecrawl-mcp-setup.md  # Fire Crawl MCP setup
@@ -528,6 +530,40 @@ See `.claude/mcp/firecrawl-mcp-setup.md`, `.claude/mcp/nanobanana-mcp-setup.md`,
 >
 > This file contains MCP server configurations with API keys that can be reused for Claude Code.
 > Common servers found in Cursor configs: `firecrawl`, `perplexity`, `dataforseo`, etc.
+
+### Google Search Console Integration
+
+**Status:** Connected and working
+
+GSC provides real ranking data directly from Google - clicks, impressions, CTR, and average position.
+
+**GSC Script:** `.claude/scripts/gsc.sh`
+
+| Command | Description |
+|---------|-------------|
+| `./gsc.sh top-queries [days] [limit]` | Top queries by clicks |
+| `./gsc.sh top-pages [days] [limit]` | Top pages by clicks |
+| `./gsc.sh quick-wins [days]` | Keywords ranking 5-20 (opportunities) |
+| `./gsc.sh search-analytics [start] [end] [dim] [limit]` | Raw analytics data |
+| `./gsc.sh inspect-url <url>` | Check URL index status |
+| `./gsc.sh list-sites` | List all GSC properties |
+
+**Examples:**
+```bash
+# Top 25 queries from last 30 days
+.claude/scripts/gsc.sh top-queries 30 25
+
+# Quick win opportunities
+.claude/scripts/gsc.sh quick-wins 30
+
+# Specific date range
+.claude/scripts/gsc.sh search-analytics 2025-01-01 2025-01-14 query 100
+```
+
+**Authentication:** Uses Google Cloud Application Default Credentials (ADC) with the `white-space-solutions` project.
+
+**Connected Properties:**
+- `https://www.remaildirect.com/` (Site Owner)
 
 ### Skills (Auto-Triggered)
 

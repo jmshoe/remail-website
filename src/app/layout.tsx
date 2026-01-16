@@ -12,8 +12,15 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
+// Ensure canonical domain always uses www.
+const getCanonicalUrl = () => {
+  const url = process.env.NEXT_PUBLIC_APP_URL || 'https://www.remaildirect.com'
+  // Force www. prefix for canonical URLs
+  return url.replace('://remaildirect.com', '://www.remaildirect.com').replace(/\/$/, '')
+}
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://www.remaildirect.com'),
+  metadataBase: new URL(getCanonicalUrl()),
   title: {
     default: 'REmail - Direct Mail Automation for Real Estate Investors',
     template: '%s | REmail',
