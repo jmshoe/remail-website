@@ -498,6 +498,7 @@ This project uses Model Context Protocol (MCP) servers for enhanced capabilities
 | **Fire Crawl** | Web scraping, crawling, content extraction | See `.claude/mcp/firecrawl-mcp-setup.md` |
 | **DataForSEO** | SEO research, keyword data, competitor analysis | See `.claude/mcp/mcp-setup.md` |
 | **NanoBanana** | AI image generation (Gemini) for blog posts | See `.claude/mcp/nanobanana-mcp-setup.md` |
+| **PostHog** | Analytics, experiments, feature flags, insights | See `.claude/mcp/posthog-mcp-setup.md` |
 | **Playwright** | Browser automation, screenshots, web interaction | `claude mcp add playwright -- npx @playwright/mcp@latest` |
 | **Perplexity** | AI-powered web search and research | `claude mcp add perplexity -e PERPLEXITY_API_KEY=your-key -- npx -y @mseep/perplexity-mcp` |
 | **Chrome DevTools** | Chrome debugging, inspection, performance analysis | `claude mcp add chrome-devtools -- npx chrome-devtools-mcp@latest` |
@@ -519,11 +520,14 @@ claude mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
 # Perplexity MCP (AI search)
 claude mcp add perplexity -e PERPLEXITY_API_KEY=your-key -- npx -y @mseep/perplexity-mcp
 
+# PostHog MCP (analytics, experiments, feature flags)
+claude mcp add posthog --type http --url https://mcp.posthog.com/mcp
+
 # Verify
 claude mcp list
 ```
 
-See `.claude/mcp/firecrawl-mcp-setup.md`, `.claude/mcp/nanobanana-mcp-setup.md`, and `.claude/mcp/mcp-setup.md` for detailed configuration.
+See `.claude/mcp/posthog-mcp-setup.md`, `.claude/mcp/firecrawl-mcp-setup.md`, `.claude/mcp/nanobanana-mcp-setup.md`, and `.claude/mcp/mcp-setup.md` for detailed configuration.
 
 > **💡 Tip: Check Cursor MCP Config for Existing Keys**
 >

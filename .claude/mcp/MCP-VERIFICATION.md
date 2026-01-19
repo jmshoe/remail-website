@@ -16,6 +16,7 @@ Run `claude mcp list` to see all connected servers.
 | `playwright` | ✅ | Browser automation |
 | `chrome-devtools` | ✅ | Chrome debugging |
 | `gemini-nanobanana-mcp` | ✅ | AI image generation |
+| `posthog` | ✅ | Analytics, experiments, feature flags |
 
 ## DataForSEO MCP
 
@@ -36,6 +37,28 @@ echo -n "your-email@example.com:your-api-password" | base64
 
 **Common Issue - 401 Error:**
 If you get authentication errors, verify the credentials in `~/.claude.json` match your DataForSEO API credentials. You can check your Cursor MCP config (`~/.cursor/mcp.json`) for reference.
+
+## PostHog MCP
+
+**Configuration:** Uses HTTP mode with PostHog's hosted MCP endpoint.
+
+**URL:** `https://mcp.posthog.com/mcp`
+
+**Authentication:** OAuth-based (handled automatically)
+
+**Setup:**
+```bash
+claude mcp add posthog --type http --url https://mcp.posthog.com/mcp
+```
+
+**Capabilities:**
+- Query analytics data with natural language
+- Create and manage dashboards and insights
+- Run A/B experiments and feature flags
+- Monitor errors and logs
+- Create and manage surveys
+
+**Full documentation:** See `.claude/mcp/posthog-mcp-setup.md`
 
 ## Other MCP Servers
 
@@ -92,5 +115,6 @@ The most common issue. Fix:
 
 ## Last Verified
 
-- Date: 2025-01-05
+- Date: 2025-01-18
 - All MCP servers: ✅ Connected
+- PostHog: White Space Solutions / Default project (293244)

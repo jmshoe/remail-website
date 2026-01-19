@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
-import { GoogleTagManager, GoogleTagManagerNoScript, ConsentBanner } from '@/components/analytics'
+import { GoogleTagManager, GoogleTagManagerNoScript, ConsentBanner, PostHogProvider } from '@/components/analytics'
 
 // Skip static generation for all pages
 export const dynamic = 'force-dynamic'
@@ -93,7 +93,9 @@ export default function RootLayout({
       </head>
       <body className={`min-h-screen bg-white antialiased ${inter.className}`}>
         <GoogleTagManagerNoScript />
-        {children}
+        <PostHogProvider>
+          {children}
+        </PostHogProvider>
         <ConsentBanner />
       </body>
     </html>
